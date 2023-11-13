@@ -1,13 +1,9 @@
 import Image from "next/image";
-import { Inter } from "next/font/google";
 import MenuToggleButton from "./components/MenuToggleButton";
 import { useEffect, useRef, useState } from "react";
 import GeneralBox from "./components/GeneralBox";
 import SideOzellik from "./components/SideOzellik";
-import Slider from "./components/Slider";
 import FAQItem from "./components/FAQItem";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const [chatShow, setChatShow] = useState(false);
@@ -199,7 +195,7 @@ export default function Home() {
 
   return (
     <main
-      className={`flex h-auto flex-col items-center justify-between bg-[#f7f6f1] ${inter.className}`}
+      className={`flex h-auto flex-col items-center justify-between bg-[#f7f6f1]`}
     >
       <div
         className="z-10 h-fit w-full items-center flex flex-col overflow-y-visible overflow-x-hidden"
