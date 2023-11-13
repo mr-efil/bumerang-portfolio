@@ -1,118 +1,448 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
+import Image from "next/image";
+import { Inter } from "next/font/google";
+import MenuToggleButton from "./components/MenuToggleButton";
+import { useEffect, useRef, useState } from "react";
+import GeneralBox from "./components/GeneralBox";
+import SideOzellik from "./components/SideOzellik";
+import { useMultipleIsVisible } from "./hooks/useMultipleIsVisible";
+import Slider from "./components/Slider";
+import FAQItem from "./components/FAQItem";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const [chatShow, setChatShow] = useState(false);
+
+  const { refArray, isVisibleArray } = useMultipleIsVisible(9);
+
+  const scrollToElement = (elementId: string) => {
+    const element = document.getElementById(elementId);
+    if (element) {
+      const elementRect = element.getBoundingClientRect();
+      const targetPosition = window.scrollY + elementRect.top + 50;
+      window.scrollTo({ top: targetPosition, behavior: "smooth" });
+    }
+  };
+
+  const faqData = [
+    {
+      question: "SORULAR NASIL AÇILACAK?",
+      answer:
+        "Tailwind CSS is a utility-first CSS framework for rapidly building custom user interfaces.",
+    },
+    {
+      question: "NASIL KAYIT OLURUM?",
+      answer:
+        "You can install Tailwind CSS using npm or yarn. See the official documentation for instructions.",
+    },
+    {
+      question: "SORULAR NASIL AÇILACAK?",
+      answer:
+        "Tailwind CSS is a utility-first CSS framework for rapidly building custom user interfaces.",
+    },
+    {
+      question: "NASIL KAYIT OLURUM?",
+      answer:
+        "You can install Tailwind CSS using npm or yarn. See the official documentation for instructions.",
+    },
+    {
+      question: "SORULAR NASIL AÇILACAK?",
+      answer:
+        "Tailwind CSS is a utility-first CSS framework for rapidly building custom user interfaces.",
+    },
+    // Add more FAQ items as needed
+  ];
+
   return (
     <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
+      className={`flex h-auto flex-col items-center justify-between bg-[#f7f6f1] ${inter.className}`}
     >
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">pages/index.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+      <div
+        className="z-10 h-fit w-full items-center flex flex-col overflow-y-visible overflow-x-hidden"
+        style={{
+          backgroundColor: chatShow ? "#0d0d0d" : "",
+          transition: "background-color .5s ease-in-out",
+          transformOrigin: "top-right",
+        }}
+      >
+        <header className="w-full relative top-0 h-20 flex items-center justify-between">
+          <Image
+            src="/logo-siyah.png"
+            alt="lolol"
+            width={150}
+            height={150}
+            className="relative left-8 object-contain"
+            style={{ filter: chatShow ? "invert(1)" : "" }}
+          />
+          <MenuToggleButton setChatShow={setChatShow} chatShow={chatShow} />
+        </header>
+        <section
+          key={"hero"}
+          className="w-full h-[90vh] relative flex flex-col border-red-600 justify-start items-start"
+          style={{
+            opacity: chatShow ? 0 : 1,
+            transition: "opacity .5s ease-in-out",
+          }}
+        >
+          <Image
+            src="/MOCK-5-25.webp"
+            alt="lolol"
+            width={1200}
+            height={1200}
+            className="absolute h-5/6 -top-20 -right-14 -z-10 object-cover"
+          />
+
+          <h1 className="text-4xl font-bold italic text-left text-[#0d0d0d] relative top-52 left-8 drop-shadow-[0_2px_10px_rgba(255,255,255)] flex h-fit w-fit">
+            HEDEFLERİNİZE <br />
+            ULAŞMANIZ <br /> İÇİN
+          </h1>
+          <h2 className="text-lg font-light italic text-left  text-[#0d0d0d] relative top-52 mt-16 left-8 flex h-fit w-fit">
+            Sizler için <br />
+            yeniden tasarladığımız <br />
+            öğrenim metodunu <br />
+            keşfedin.
+          </h2>
+          <div
+            key={"hero buttons"}
+            className="relative h-14 w-5/6 flex justify-between top-52 mt-16 left-8 items-center sm:justify-start space-x-2"
           >
-            By{' '}
+            <a href="https://www.bmrng.app">
+              <button className="text-xl px-8 py-4 font-bold italic text-center text-[#f7f6f1] bg-[#0d0d0d] rounded">
+                TEST ET
+              </button>
+            </a>
+            <button
+              className="text-xl px-6 py-4 font-light italic text-center text-[#0d0d0d] border border-black border-opacity-60 rounded opacity-60"
+              onClick={() => scrollToElement("erken")}
+            >
+              erken kayıt
+            </button>
+          </div>
+        </section>
+        <section
+          key={"boxes"}
+          className="w-full h-screen relative flex flex-col items-center border-red-600"
+          style={{
+            opacity: chatShow ? 0 : 1,
+            transition: "opacity .5s ease-in-out",
+          }}
+        >
+          <GeneralBox text1={"8 FARKLI"} text2={"YARIŞMA"} number={1} />
+          <GeneralBox text1={"25 FARKLI"} text2={"OYUN"} number={2} />
+          <GeneralBox text1={"SINIRSIZ"} text2={"DENEME"} number={3} />
+
+          <div
+            className={`w-[90%] h-40 rounded-lg flex flex-col justify-between items-center border border-[#0d0d0d] relative my-2.5 `}
+          >
+            <span className="w-full text-base text-[#0d0d0d] font-light text-left top-4 left-5 relative">
+              {"// 4"}
+            </span>
+            <h2 className="w-full text-4xl text-[#0d0d0d] font-bold text-right bottom-4 right-5 relative">
+              MODERN
+              <br />
+              <span className="text-3xl font-light">ARAYÜZ</span>
+            </h2>
+          </div>
+        </section>
+        <section
+          ref={refArray[1]}
+          key={"comp"}
+          className="w-full h-screen relative flex flex-col items-start justify-start  border-red-600"
+          style={{
+            opacity: chatShow ? 0 : 1,
+            transition: "opacity .5s ease-in-out",
+          }}
+        >
+          <span
+            className={`text-base font-bold italic text-left  text-[#0d0d0d] relative top-0 mt-8 left-8 flex transition-opacity ease-in duration-500 delay-200 ${
+              isVisibleArray[1] ? "opacity-30" : "opacity-0"
+            }`}
+          >
+            yarışmalar
+          </span>
+          <h2
+            className={`text-4xl font-bold italic text-left text-[#0d0d0d] relative top-0 mt-2 left-8 drop-shadow-[0_2px_10px_rgba(255,255,255)] flex h-fit w-fit transition-opacity delay-300 ease-in duration-500 ${
+              isVisibleArray[1] ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            REKABETÇİ
+            <br />
+            YARIŞMALAR
+          </h2>
+          <h3
+            className={`text-lg font-light italic text-left top-0 mt-4 text-[#0d0d0d] relative left-8 flex h-fit w-fit transition-opacity ease-in duration-500 delay-500 ${
+              isVisibleArray[1] ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            Rakiplerinizle sınavdan önce <br />
+            mücadele etme fırsatı <br />
+            edinin.
+          </h3>
+          <div className="absolute w-auto h-3/4 bottom-0 -left-20 -z-10 ">
             <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
+              src="/competition.webp"
+              alt="lolol"
+              width={3000}
+              height={1800}
+              className="w-full h-full object-cover"
             />
-          </a>
-        </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
+          </div>
+        </section>
+        <section
+          ref={refArray[2]}
+          key={"game"}
+          className="w-full h-screen relative flex flex-col items-start justify-start  border-red-600"
+          style={{
+            opacity: chatShow ? 0 : 1,
+            transition: "opacity .5s ease-in-out",
+          }}
         >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
+          <span
+            className={`text-base font-bold italic text-left  text-[#0d0d0d] relative top-0 mt-8 left-8 flex transition-opacity ease-in duration-500 delay-200 ${
+              isVisibleArray[2] ? "opacity-30" : "opacity-0"
+            }`}
+          >
+            oyunlar
+          </span>
+          <h2
+            className={`text-4xl font-bold italic text-left text-[#0d0d0d] relative top-0 mt-2 left-8 drop-shadow-[0_2px_10px_rgba(255,255,255)] flex h-fit w-fit transition-opacity delay-300 ease-in duration-500 ${
+              isVisibleArray[2] ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            ZEKA
+            <br />
+            OYUNLARI
           </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
+          <h3
+            className={`text-lg font-light italic text-left top-0 mt-4 text-[#0d0d0d] relative left-8 flex h-fit w-fit transition-opacity ease-in duration-500 delay-500 ${
+              isVisibleArray[2] ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            Çeşitli eğlenceli oyunlarla <br />
+            çalışma sürenizi <br />
+            artırın.
+          </h3>
+          <div className="absolute w-auto h-3/4 bottom-0 -left-36 -z-10 ">
+            <Image
+              src="/game.webp"
+              alt="lolol"
+              width={3000}
+              height={1800}
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </section>
+        <section
+          ref={refArray[3]}
+          key={"deneme"}
+          className="w-full h-screen relative flex flex-col items-start justify-start  border-red-600"
+          style={{
+            opacity: chatShow ? 0 : 1,
+            transition: "opacity .5s ease-in-out",
+          }}
         >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
+          <span
+            className={`text-base font-bold italic text-left  text-[#0d0d0d] relative top-0 mt-8 left-8 flex transition-opacity ease-in duration-500 delay-200 ${
+              isVisibleArray[3] ? "opacity-30" : "opacity-0"
+            }`}
+          >
+            denemeler
+          </span>
+          <h2
+            className={`text-4xl font-bold italic text-left text-[#0d0d0d] relative top-0 mt-2 left-8 drop-shadow-[0_2px_10px_rgba(255,255,255)] flex h-fit w-fit transition-opacity delay-300 ease-in duration-500 ${
+              isVisibleArray[3] ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            BİREYSEL
+            <br />
+            DENEMELER
           </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
+          <h3
+            className={`text-lg font-light italic text-left top-0 mt-4 text-[#0d0d0d] relative left-8 flex h-fit w-fit transition-opacity ease-in duration-500 delay-500 ${
+              isVisibleArray[3] ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            Hazır hissettiğiniz konulardan <br />
+            kendi seviyenize uygun <br />
+            denemeler oluşturun.
+          </h3>
+          <div className="absolute w-auto h-3/4 bottom-0 -right-24 -z-10">
+            <Image
+              src="/deneme.webp"
+              alt="lolol"
+              width={3000}
+              height={1800}
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </section>
+        <section
+          ref={refArray[5]}
+          key={"horizontal"}
+          className="w-full h-fit relative flex flex-col items-stretch justify-start bg-[#0d0d0d] pb-24 mt-24"
+          style={{
+            opacity: chatShow ? 0 : 1,
+            transition: "opacity .5s ease-in-out",
+          }}
         >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
+          <span className="font-bold text-xl absolute top-6 left-6 rotate-45">
+            +
+          </span>
+          <span className="font-bold text-xl absolute top-6 right-6 rotate-45">
+            +
+          </span>
+          <span className="font-bold text-xl absolute bottom-6 left-6 rotate-45">
+            +
+          </span>
+          <span className="font-bold text-xl absolute bottom-6 right-6 rotate-45">
+            +
+          </span>
+          <h2
+            className={`text-2xl font-bold italic text-center text-[#f7f6f1] relative top-0 mt-24 mx-auto flex h-fit w-fit transition-opacity delay-300 ease-in duration-500 mb-16  ${
+              isVisibleArray[5] ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            ÇALIŞMA
+            <br />
+            FELSEFEMİZİ
+            <br />
+            KEŞFEDİN
           </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Discover and deploy boilerplate example Next.js&nbsp;projects.
-          </p>
-        </a>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
+          <SideOzellik
+            title={"TAKVİM"}
+            image={"/takvim.png"}
+            position={"right"}
+          >
+            “Hayatı <span className="font-bold">sıkışık </span>değil
+            <br /> <span className="font-bold">seri</span> yaşa”
+          </SideOzellik>
+          <SideOzellik title={"KÜRSÜ"} image={"/kursu.png"} position={"left"}>
+            “<span className="font-bold">Tabanı </span>taşı
+            <br /> <span className="font-bold">tavana</span> sınır koyma”
+          </SideOzellik>
+          <SideOzellik
+            title={"PATİKA"}
+            image={"/patika.png"}
+            position={"right"}
+          >
+            “<span className="font-bold">Zekana </span>değil
+            <br /> <span className="font-bold">çabana</span> güven”
+          </SideOzellik>
+        </section>
+        <section
+          ref={refArray[6]}
+          key={"SSS"}
+          className="w-full h-fit relative flex flex-col items-center justify-start text-[#0d0d0d] pb-24"
+          style={{
+            opacity: chatShow ? 0 : 1,
+            transition: "opacity .5s ease-in-out",
+          }}
         >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
+          <span className="font-bold text-xl absolute top-6 left-6 rotate-45 opacity-60">
+            +
+          </span>
+          <span className="font-bold text-xl absolute top-6 right-6 rotate-45 opacity-60">
+            +
+          </span>
+          <span className="font-bold text-xl absolute bottom-6 left-6 rotate-45 opacity-60">
+            +
+          </span>
+          <span className="font-bold text-xl absolute bottom-6 right-6 rotate-45 opacity-60">
+            +
+          </span>
+          <h2
+            className={`text-4xl font-bold italic text-center relative top-0 mt-24 mx-auto flex h-fit w-fit transition-opacity delay-300 ease-in duration-500 mb-16 `}
+          >
+            SSS
           </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+
+          <div className="w-full flex flex-col items-center">
+            {faqData.map((faq, index) => (
+              <FAQItem key={index} {...faq} />
+            ))}
+          </div>
+        </section>
+
+        <section
+          ref={refArray[7]}
+          id="erken"
+          key={"pricing"}
+          className="w-full h-fit relative flex flex-col items-center justify-start text-[#0d0d0d] py-24"
+          style={{
+            opacity: chatShow ? 0 : 1,
+            transition: "opacity .5s ease-in-out",
+          }}
+        >
+          <div className="w-full relative h-fit flex">
+            <h3 className="text-base px-16 py-4 left-8 flex relative font-light italic text-center text-[#0d0d0d] border border-black rounded-lg">
+              AYLIK
+            </h3>
+          </div>
+          {/* <div className="w-full relative h-fit flex justify-between space-x-3 px-8">
+            <h3 className="py-4 w-full px-8 flex justify-center relative font-light text-base italic text-center text-[#0d0d0d] border border-black rounded-lg">
+              YILLIK
+            </h3>
+            <h3 className="py-4 w-full px-8 flex justify-center relative font-bold text-base italic text-center text-[#f7f6f1] border border-[#f7f6f1] rounded-lg bg-[#0d0d0d]">
+              ÜYE OL
+            </h3>
+          </div> */}
+          <div className="w-5/6 relative h-72 flex flex-col items-center text-[#0d0d0d] border border-black my-4 rounded-lg">
+            <div className="w-full relative top-0 flex items-center flex-col">
+              <h3 className="w-5/6 text-4xl mt-8 flex relative font-bold italic text-left">
+                AYLIK <br />
+                ÜYELİK
+              </h3>
+              <h4 className="w-5/6 text-base mt-2 flex relative font-light italic text-left">
+                Erken erişim <br />
+                fiyatlarımızdan <br />
+                yararlanın.
+              </h4>
+            </div>
+            <div className="w-full absolute bottom-0 flex items-center flex-col">
+              <h3 className="w-5/6 text-base flex relative font-extralight text-right justify-end">
+                50% <br />
+                indirim
+              </h3>
+              <h4 className="w-5/6 text-5xl mt-2 flex relative font-bold text-right items-end justify-end mb-8">
+                300<span className="font-light text-2xl">₺</span>
+              </h4>
+            </div>
+          </div>
+          <div className="w-full relative h-fit flex ">
+            <h3 className="text-base px-16 py-4 left-8 flex relative font-light italic text-center text-[#f7f6f1] border border-[#f7f6f1] rounded-lg bg-[#0d0d0d]">
+              AYLIK
+            </h3>
+          </div>
+          <div className="w-5/6 relative h-72 flex flex-col items-center text-[#f7f6f1] border border-[#f7f6f1] my-4 rounded-lg bg-[#0d0d0d]">
+            <div className="w-full relative top-0 flex items-center flex-col">
+              <h3 className="w-5/6 text-4xl mt-8 flex relative font-bold italic text-left">
+                YILLIK <br />
+                ÜYELİK
+              </h3>
+              <h4 className="w-5/6 text-base mt-2 flex relative font-light italic text-left">
+                Tek çekim <br />
+                fırsatından <br />
+                yararlanın.
+              </h4>
+            </div>
+            <div className="w-full h-auto absolute bottom-0 flex items-center flex-col">
+              <h3 className="w-5/6 text-base flex relative font-extralight text-right justify-end">
+                50% <br />
+                indirim
+              </h3>
+              <h4 className="w-5/6 text-5xl mt-2 flex relative font-bold text-right items-end justify-end mb-8">
+                3000<span className="font-light text-2xl">₺</span>
+              </h4>
+            </div>
+          </div>
+        </section>
+        <footer className="w-full flex justify-center bg-[#0d0d0d] text-white py-4 text-center">
+          &copy; {new Date().getFullYear()} BUMERANG STARTDOWN.
+          <br />
+          Bütün hakları sakldır.
+        </footer>
       </div>
     </main>
-  )
+  );
 }
