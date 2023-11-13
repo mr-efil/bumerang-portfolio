@@ -1,6 +1,5 @@
 import Image from "next/image";
-import React, { ReactNode, ReactElement, RefObject, useEffect } from "react";
-import { useMultipleIsVisible } from "../hooks/useMultipleIsVisible";
+import React, { ReactNode, ReactElement, RefObject, useEffect, useRef, useState } from "react";
 
 interface Props {
   children: ReactNode;
@@ -9,10 +8,30 @@ interface Props {
 }
 
 const HorScroll = ({ children, title, image }: Props): ReactElement => {
-  const { refArray, isVisibleArray } = useMultipleIsVisible(1);
+  const ref1 = useRef<HTMLDivElement | null>(null);
+  const [isVisible1, setIsVisible1] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      setIsVisible1(entry.isIntersecting);
+    });
+  
+    const currentRef = ref1.current; // Capture the current ref value
+  
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+  
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, [ref1]);
+  
   return (
     <div
-      ref={refArray[0]}
+      ref={ref1}
       className="relative bottom-0 w-fit h-full flex flex-col justify-start"
     >
       <div className="h-5/6 w-5/6 absolute m-auto border border-[#0d0d0d] rounded translate-x-14 translate-y-16" />
@@ -27,7 +46,7 @@ const HorScroll = ({ children, title, image }: Props): ReactElement => {
       </div>
       <div
         className={`w-60 bottom-0 left-24 flex flex-col items-end justify-between h-24 text-right relative text-[#0d0d0d] transition-opacity delay-500 ease-in duration-500  ${
-          isVisibleArray[0] ? "opacity-100" : "opacity-0"
+          isVisible1 ? "opacity-100" : "opacity-0"
         }`}
       >
         <h2 className="font-bold text-4xl">{title}</h2>

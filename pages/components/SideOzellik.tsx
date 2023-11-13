@@ -1,6 +1,5 @@
 import Image from "next/image";
-import React, { ReactNode, ReactElement, RefObject, useEffect } from "react";
-import { useMultipleIsVisible } from "../hooks/useMultipleIsVisible";
+import React, { ReactNode, ReactElement, RefObject, useEffect, useRef, useState } from "react";
 
 interface Props {
   children: ReactNode;
@@ -15,10 +14,30 @@ const SideOzellik = ({
   image,
   position,
 }: Props): ReactElement => {
-  const { refArray, isVisibleArray } = useMultipleIsVisible(1);
+  const ref1 = useRef<HTMLDivElement | null>(null);
+  const [isVisible1, setIsVisible1] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      setIsVisible1(entry.isIntersecting);
+    });
+  
+    const currentRef = ref1.current; // Capture the current ref value
+  
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+  
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, [ref1]);
+  
   return (
     <div
-      ref={refArray[0]}
+      ref={ref1}
       className={`relative bottom-0 justify-between ${
         position == "right" ? "left-8 items-start" : "right-8 items-end"
       }  w-screen h-[30rem] flex flex-col rounded-xl my-4 bg-[rgb(232,232,232)]`}
@@ -38,7 +57,7 @@ const SideOzellik = ({
             ? "items-end left-0 text-right"
             : "items-start right-0 text-left"
         } justify-between h-24  text-[#0d0d0d] transition-opacity delay-500 ease-in duration-500  ${
-          isVisibleArray[0] ? "opacity-100" : "opacity-0"
+          isVisible1 ? "opacity-100" : "opacity-0"
         }`}
       >
         <h2 className="font-bold text-4xl">{title}</h2>

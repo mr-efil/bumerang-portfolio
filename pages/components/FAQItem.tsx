@@ -1,17 +1,42 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { useMultipleIsVisible } from "../hooks/useMultipleIsVisible";
 
-const FAQItem = ({ question, answer }) => {
+interface FAQItemProps {
+  question: string;
+  answer: string;
+}
+
+const FAQItem: React.FC<FAQItemProps> = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleOpen = () => {
     setIsOpen(!isOpen);
   };
-  const { refArray, isVisibleArray } = useMultipleIsVisible(1);
+
+  const ref1 = useRef<HTMLDivElement | null>(null);
+  const [isVisible1, setIsVisible1] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      setIsVisible1(entry.isIntersecting);
+    });
+  
+    const currentRef = ref1.current; // Capture the current ref value
+  
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+  
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, [ref1]);
+
   return (
     <div
-      ref={refArray[0]}
+      ref={ref1}
       className={`relative mb-4 h-auto w-5/6 flex flex-col pt-2 rounded px-6 items-center transition-all duration-200 ${
         isOpen ? "bg-[#0d0d0d] text-white pt-4 pb-8" : "bg-transparent"
       }`}
@@ -19,7 +44,7 @@ const FAQItem = ({ question, answer }) => {
       <div
         onClick={toggleOpen}
         className={`w-full h-20 flex flex-row justify-between items-center text-left pr-2 transition-opacity duration-500 ${
-          isVisibleArray[0] ? "opacity-100" : "opacity-0"
+          isVisible1 ? "opacity-100" : "opacity-0"
         }`}
       >
         <h3 className="w-5/6 flex flex-wrap text-lg font-bold">{question}</h3>

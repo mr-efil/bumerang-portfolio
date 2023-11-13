@@ -4,7 +4,6 @@ import MenuToggleButton from "./components/MenuToggleButton";
 import { useEffect, useRef, useState } from "react";
 import GeneralBox from "./components/GeneralBox";
 import SideOzellik from "./components/SideOzellik";
-import { useMultipleIsVisible } from "./hooks/useMultipleIsVisible";
 import Slider from "./components/Slider";
 import FAQItem from "./components/FAQItem";
 
@@ -13,7 +12,152 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
   const [chatShow, setChatShow] = useState(false);
 
-  const { refArray, isVisibleArray } = useMultipleIsVisible(9);
+  const [isVisible1, setIsVisible1] = useState(false);
+  const ref1 = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      setIsVisible1(entry.isIntersecting);
+    });
+
+    const currentRef = ref1.current; // Capture the current ref value
+
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, [ref1]);
+
+  const [isVisible2, setIsVisible2] = useState(false);
+  const ref2 = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      setIsVisible2(entry.isIntersecting);
+    });
+
+    const currentRef = ref2.current;
+
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, [ref2]);
+
+  const [isVisible3, setIsVisible3] = useState(false);
+  const ref3 = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      setIsVisible3(entry.isIntersecting);
+    });
+
+    const currentRef = ref3.current;
+
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, [ref3]);
+
+  const [isVisible4, setIsVisible4] = useState(false);
+  const ref4 = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      setIsVisible4(entry.isIntersecting);
+    });
+
+    const currentRef = ref4.current;
+
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, [ref4]);
+
+  const [isVisible5, setIsVisible5] = useState(false);
+  const ref5 = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      setIsVisible5(entry.isIntersecting);
+    });
+
+    const currentRef = ref5.current;
+
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, [ref5]);
+
+  const [isVisible6, setIsVisible6] = useState(false);
+  const ref6 = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      setIsVisible6(entry.isIntersecting);
+    });
+
+    const currentRef = ref6.current;
+
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, [ref6]);
+
+  const [isVisible7, setIsVisible7] = useState(false);
+  const ref7 = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      setIsVisible7(entry.isIntersecting);
+    });
+
+    const currentRef = ref7.current;
+
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, [ref7]);
 
   const scrollToElement = (elementId: string) => {
     const element = document.getElementById(elementId);
@@ -145,7 +289,7 @@ export default function Home() {
           </div>
         </section>
         <section
-          ref={refArray[1]}
+          ref={ref1}
           key={"comp"}
           className="w-full h-screen relative flex flex-col items-start justify-start  border-red-600"
           style={{
@@ -155,14 +299,14 @@ export default function Home() {
         >
           <span
             className={`text-base font-bold italic text-left  text-[#0d0d0d] relative top-0 mt-8 left-8 flex transition-opacity ease-in duration-500 delay-200 ${
-              isVisibleArray[1] ? "opacity-30" : "opacity-0"
+              isVisible1 ? "opacity-30" : "opacity-0"
             }`}
           >
             yarışmalar
           </span>
           <h2
             className={`text-4xl font-bold italic text-left text-[#0d0d0d] relative top-0 mt-2 left-8 drop-shadow-[0_2px_10px_rgba(255,255,255)] flex h-fit w-fit transition-opacity delay-300 ease-in duration-500 ${
-              isVisibleArray[1] ? "opacity-100" : "opacity-0"
+              isVisible1 ? "opacity-100" : "opacity-0"
             }`}
           >
             REKABETÇİ
@@ -171,7 +315,7 @@ export default function Home() {
           </h2>
           <h3
             className={`text-lg font-light italic text-left top-0 mt-4 text-[#0d0d0d] relative left-8 flex h-fit w-fit transition-opacity ease-in duration-500 delay-500 ${
-              isVisibleArray[1] ? "opacity-100" : "opacity-0"
+              isVisible1 ? "opacity-100" : "opacity-0"
             }`}
           >
             Rakiplerinizle sınavdan önce <br />
@@ -189,7 +333,7 @@ export default function Home() {
           </div>
         </section>
         <section
-          ref={refArray[2]}
+          ref={ref2}
           key={"game"}
           className="w-full h-screen relative flex flex-col items-start justify-start  border-red-600"
           style={{
@@ -199,14 +343,14 @@ export default function Home() {
         >
           <span
             className={`text-base font-bold italic text-left  text-[#0d0d0d] relative top-0 mt-8 left-8 flex transition-opacity ease-in duration-500 delay-200 ${
-              isVisibleArray[2] ? "opacity-30" : "opacity-0"
+              isVisible2 ? "opacity-30" : "opacity-0"
             }`}
           >
             oyunlar
           </span>
           <h2
             className={`text-4xl font-bold italic text-left text-[#0d0d0d] relative top-0 mt-2 left-8 drop-shadow-[0_2px_10px_rgba(255,255,255)] flex h-fit w-fit transition-opacity delay-300 ease-in duration-500 ${
-              isVisibleArray[2] ? "opacity-100" : "opacity-0"
+              isVisible2 ? "opacity-100" : "opacity-0"
             }`}
           >
             ZEKA
@@ -215,7 +359,7 @@ export default function Home() {
           </h2>
           <h3
             className={`text-lg font-light italic text-left top-0 mt-4 text-[#0d0d0d] relative left-8 flex h-fit w-fit transition-opacity ease-in duration-500 delay-500 ${
-              isVisibleArray[2] ? "opacity-100" : "opacity-0"
+              isVisible2 ? "opacity-100" : "opacity-0"
             }`}
           >
             Çeşitli eğlenceli oyunlarla <br />
@@ -233,7 +377,7 @@ export default function Home() {
           </div>
         </section>
         <section
-          ref={refArray[3]}
+          ref={ref3}
           key={"deneme"}
           className="w-full h-screen relative flex flex-col items-start justify-start  border-red-600"
           style={{
@@ -243,14 +387,14 @@ export default function Home() {
         >
           <span
             className={`text-base font-bold italic text-left  text-[#0d0d0d] relative top-0 mt-8 left-8 flex transition-opacity ease-in duration-500 delay-200 ${
-              isVisibleArray[3] ? "opacity-30" : "opacity-0"
+              isVisible3 ? "opacity-30" : "opacity-0"
             }`}
           >
             denemeler
           </span>
           <h2
             className={`text-4xl font-bold italic text-left text-[#0d0d0d] relative top-0 mt-2 left-8 drop-shadow-[0_2px_10px_rgba(255,255,255)] flex h-fit w-fit transition-opacity delay-300 ease-in duration-500 ${
-              isVisibleArray[3] ? "opacity-100" : "opacity-0"
+              isVisible3 ? "opacity-100" : "opacity-0"
             }`}
           >
             BİREYSEL
@@ -259,7 +403,7 @@ export default function Home() {
           </h2>
           <h3
             className={`text-lg font-light italic text-left top-0 mt-4 text-[#0d0d0d] relative left-8 flex h-fit w-fit transition-opacity ease-in duration-500 delay-500 ${
-              isVisibleArray[3] ? "opacity-100" : "opacity-0"
+              isVisible3 ? "opacity-100" : "opacity-0"
             }`}
           >
             Hazır hissettiğiniz konulardan <br />
@@ -277,7 +421,7 @@ export default function Home() {
           </div>
         </section>
         <section
-          ref={refArray[5]}
+          ref={ref5}
           key={"horizontal"}
           className="w-full h-fit relative flex flex-col items-stretch justify-start bg-[#0d0d0d] pb-24 mt-24"
           style={{
@@ -299,7 +443,7 @@ export default function Home() {
           </span>
           <h2
             className={`text-2xl font-bold italic text-center text-[#f7f6f1] relative top-0 mt-24 mx-auto flex h-fit w-fit transition-opacity delay-300 ease-in duration-500 mb-16  ${
-              isVisibleArray[5] ? "opacity-100" : "opacity-0"
+              isVisible5 ? "opacity-100" : "opacity-0"
             }`}
           >
             ÇALIŞMA
@@ -331,7 +475,7 @@ export default function Home() {
           </SideOzellik>
         </section>
         <section
-          ref={refArray[6]}
+          ref={ref6}
           key={"SSS"}
           className="w-full h-fit relative flex flex-col items-center justify-start text-[#0d0d0d] pb-24"
           style={{
@@ -365,7 +509,7 @@ export default function Home() {
         </section>
 
         <section
-          ref={refArray[7]}
+          ref={ref7}
           id="erken"
           key={"pricing"}
           className="w-full h-fit relative flex flex-col items-center justify-start text-[#0d0d0d] py-24"
