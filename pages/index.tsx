@@ -196,6 +196,7 @@ export default function Home() {
   return (
     <main
       className={`flex h-auto flex-col items-center justify-between bg-[#f7f6f1]`}
+      style={{ fontFamily: "Montserrat ; sans-serif" }}
     >
       <div
         className="z-10 h-fit w-full items-center flex flex-col overflow-y-visible overflow-x-hidden"
@@ -551,7 +552,7 @@ export default function Home() {
           </div>
           <div className="w-full relative h-fit flex ">
             <h3 className="text-base px-16 py-4 left-8 flex relative font-light italic text-center text-[#f7f6f1] border border-[#f7f6f1] rounded-lg bg-[#0d0d0d]">
-              AYLIK
+              YILLIK
             </h3>
           </div>
           <div className="w-5/6 relative h-72 flex flex-col items-center text-[#f7f6f1] border border-[#f7f6f1] my-4 rounded-lg bg-[#0d0d0d]">
@@ -580,7 +581,7 @@ export default function Home() {
         <footer className="w-full flex justify-center bg-[#0d0d0d] text-white py-4 text-center">
           &copy; {new Date().getFullYear()} BUMERANG STARTDOWN.
           <br />
-          Bütün hakları sakldır.
+          Bütün hakları saklıdır.
         </footer>
       </div>
     </main>
