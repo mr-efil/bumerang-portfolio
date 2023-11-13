@@ -40,9 +40,9 @@ const SideOzellik = ({
       ref={ref1}
       className={`relative bottom-0 justify-between ${
         position == "right" ? "left-8 items-start" : "right-8 items-end"
-      }  w-screen h-[30rem] flex flex-col rounded-xl my-4 bg-[rgb(232,232,232)]`}
+      }  w-screen h-[30rem] lg:h-[60rem] flex flex-col rounded-xl my-4 bg-[rgb(232,232,232)]`}
     >
-      <div className="relative w-full h-3/4 top-4 right-0 flex items-center">
+      <div className="relative w-full h-3/4 lg:h-5/6 top-4 right-0 flex items-center">
         <Image
           src={image}
           alt="lolol"
@@ -52,7 +52,7 @@ const SideOzellik = ({
         />
       </div>
       <div
-        className={`relative w-5/6 bottom-10 flex flex-col ${
+        className={`relative w-5/6 bottom-10 lg:bottom-36 flex flex-col ${
           position == "right"
             ? "items-end left-0 text-right"
             : "items-start right-0 text-left"
@@ -60,8 +60,8 @@ const SideOzellik = ({
           isVisible1 ? "opacity-100" : "opacity-0"
         }`}
       >
-        <h2 className="font-bold text-4xl">{title}</h2>
-        <h3 className="font-light italic text-base">{children}</h3>
+        <h2 className="font-bold text-4xl lg:text-6xl lg:mb-4">{title}</h2>
+        <h3 className="font-light italic text-base lg:text-4xl">{children}</h3>
       </div>
     </div>
   );

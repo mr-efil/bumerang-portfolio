@@ -47,7 +47,7 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer }) => {
           isVisible1 ? "opacity-100" : "opacity-0"
         }`}
       >
-        <h3 className="w-5/6 flex flex-wrap text-lg font-bold">{question}</h3>
+        <h3 className="w-5/6 flex flex-wrap text-lg lg:text-2xl font-bold">{question}</h3>
 
         <Image
           src="/bumerang_sss.png"
@@ -62,8 +62,7 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer }) => {
         />
       </div>
       {isOpen && (
-        <h4 className="relative flex mt-2 text-base font-light italic">
-          {answer}
+        <h4 className="relative flex mt-2 text-base lg:text-lg font-light italic">
           {answer}
         </h4>
       )}
