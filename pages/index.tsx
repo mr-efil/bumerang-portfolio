@@ -513,7 +513,7 @@ export default function Home() {
           <div className="w-full lg:w-1/3 h-fit flex flex-col justify-start items-center">
             <div className="w-full lg:w-5/6 relative h-fit flex">
               <h3 className="text-base px-16 py-4 left-8 lg:left-0 flex relative font-light italic text-center text-[#0d0d0d] border border-black rounded-lg">
-                AYLIK
+                TEMEL PAKET
               </h3>
             </div>
             {/* <div className="w-full relative h-fit flex justify-between space-x-3 px-8">
@@ -527,7 +527,8 @@ export default function Home() {
             <div className="w-5/6 relative h-72 flex flex-col items-center text-[#0d0d0d] border border-black my-4 rounded-lg">
               <div className="w-full relative top-0 flex items-center flex-col">
                 <h3 className="w-5/6 text-4xl mt-8 flex relative font-bold italic text-left">
-                  AYLIK <br />
+                  STANDART
+                  <br />
                   ÜYELİK
                 </h3>
                 <h4 className="w-5/6 text-base mt-2 flex relative font-light italic text-left">
@@ -538,16 +539,57 @@ export default function Home() {
               </div>
               <div className="w-full absolute bottom-0 flex items-center flex-col">
                 <h3 className="w-5/6 text-base flex relative font-extralight text-right justify-end">
-                  50% <br />
+                  20% <br />
                   indirim
                 </h3>
                 <h4 className="w-5/6 text-5xl mt-2 flex relative font-bold text-right items-end justify-end mb-8">
-                  300<span className="font-light text-2xl">₺</span>
+                  999<span className="font-light text-2xl">₺</span>
                 </h4>
               </div>
             </div>
           </div>
           <div className="w-full lg:w-1/3 h-fit flex flex-col justify-start items-center">
+            <div className="w-full lg:w-5/6 relative h-fit flex">
+              <h3 className="text-base px-16 py-4 left-8 flex  lg:left-0 relative font-light italic text-center text-[#f7f6f1] border border-[#f7f6f1] rounded-lg bg-[#0d0d0d]">
+                İLERİ PAKET
+              </h3>
+            </div>
+            <div className="w-5/6 relative h-72 flex flex-col items-center text-[#f7f6f1] border border-[#f7f6f1] my-4 rounded-lg bg-[#0d0d0d]">
+              <div className="w-full relative top-0 flex items-center flex-col">
+                <h3 className="w-5/6 text-4xl mt-8 flex relative font-bold italic text-left">
+                  GELİŞTİRİLMİŞ <br />
+                  ÜYELİK
+                </h3>
+                <h4 className="w-5/6 text-base mt-2 flex relative font-light italic text-left">
+                  Tek çekim <br />
+                  fırsatından <br />
+                  yararlanın.
+                </h4>
+              </div>
+              <div className="w-full h-auto absolute bottom-0 flex items-center flex-col">
+                <h3 className="w-5/6 text-base flex relative font-extralight text-right justify-end">
+                  20% <br />
+                  indirim
+                </h3>
+                <h4 className="w-5/6 text-5xl mt-2 flex relative font-bold text-right items-end justify-end mb-8">
+                  2999<span className="font-light text-2xl">₺</span>
+                </h4>
+              </div>
+            </div>
+          </div>
+        </section>
+        <footer className="w-full flex justify-center bg-[#0d0d0d] text-white py-4 text-center">
+          &copy; {new Date().getFullYear()} BUMERANG STARTDOWN.
+          <br />
+          Bütün hakları saklıdır.
+        </footer>
+      </div>
+    </main>
+  );
+}
+
+{
+  /* <div className="w-full lg:w-1/3 h-fit flex flex-col justify-start items-center">
             <div className="w-full lg:w-5/6 relative h-fit flex">
               <h3 className="text-base px-16 py-4 left-8 flex  lg:left-0 relative font-light italic text-center text-[#f7f6f1] border border-[#f7f6f1] rounded-lg bg-[#0d0d0d]">
                 YILLIK
@@ -575,14 +617,5 @@ export default function Home() {
                 </h4>
               </div>
             </div>
-          </div>
-        </section>
-        <footer className="w-full flex justify-center bg-[#0d0d0d] text-white py-4 text-center">
-          &copy; {new Date().getFullYear()} BUMERANG STARTDOWN.
-          <br />
-          Bütün hakları saklıdır.
-        </footer>
-      </div>
-    </main>
-  );
+          </div> */
 }
