@@ -110,7 +110,7 @@ body {
 
 @media (max-width: 1023px) {
   .hero-100 {
-    transform: rotateZ(61deg) rotateX(40deg) rotateY(-22deg) skew(2deg) scale(0.66);
+    transform: rotateZ(61deg) rotateX(40deg) rotateY(-22deg) skew(2deg);
   }
 }
 

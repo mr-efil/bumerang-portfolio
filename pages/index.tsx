@@ -5,6 +5,7 @@ import GeneralBox from "./components/GeneralBox";
 import SideOzellik from "./components/SideOzellik";
 import FAQItem from "./components/FAQItem";
 import Map from "./components/Map";
+import BumerangWrapper from "./components/BumerangWrapper";
 
 export default function Home() {
   const [chatShow, setChatShow] = useState(false);
@@ -215,15 +216,15 @@ export default function Home() {
         </header>
         <section
           key={"hero"}
-          className="w-screen h-[80vh] lg:h-[90vh] relative flex flex-col border-red-600 justify-start items-start overflow-visible"
+          className="w-screen h-[90vh] lg:h-[90vh] relative flex flex-col border-red-600 justify-start items-start overflow-visible"
           style={{
             opacity: chatShow ? 0 : 1,
             transition: "opacity .5s ease-in-out",
             perspective: 3000,
           }}
         >
-          <div className="w-[2000px] h-screen absolute top-0 right-0 xl:translate-x-[10%] 2xl:translate-x-0">
-            <div className="w-[420px] h-96 absolute top-[240px] right-[135px] lg:top-[415px] lg:right-[640px] border-green-500 font-bold text-6xl text-[#0d0d0d] flex text-right justify-end overflow-hidden hero-100">
+          <div className="w-[2000px] h-screen absolute -top-16 md:top-0 -right-[36rem] md:-right-64 lg:-right-16 xl:right-0 xl:translate-x-[10%] 2xl:translate-x-0 scale-[70%] md:scale-[80%] lg:scale-100">
+            <div className="w-[420px] h-96 absolute top-[415px] right-[640px] border-green-500 font-bold text-6xl text-[#0d0d0d] flex text-right justify-end overflow-hidden hero-100">
               <h1 className="flex h-fit items-end flex-col top-4 relative">
                 <span className="text-[150px] bg-[#f7f6f1] hero-soru-100 z-20">
                   100
@@ -233,7 +234,7 @@ export default function Home() {
                 </span>
               </h1>
             </div>
-            <div className="w-[420px] h-96 absolute top-[-50px] right-[160px] lg:top-[-30px] lg:right-[670px] border-green-500 font-bold text-6xl text-[#0d0d0d] flex items-end justify-end text-left  overflow-x-hidden hero-100">
+            <div className="w-[420px] h-96 absolute top-[-30px] right-[670px] border-green-500 font-bold text-6xl text-[#0d0d0d] flex items-end justify-end text-left  overflow-x-hidden hero-100">
               <h1 className="-rotate-90 scale-y-[65%] -right-12 bottom-32 relative w-fit flex flex-col-reverse items-end">
                 <span className="text-[150px] bg-[#f7f6f1] hero-gun-100 z-20">
                   100
@@ -246,7 +247,7 @@ export default function Home() {
               alt="lolol"
               width={1200}
               height={1200}
-              className="absolute w-[800px] lg:w-[1200px] h-auto -top-8 -right-[225px] -z-10 object-contain lg:right-0 lg:-top-[90px] lg:overflow-visible"
+              className="absolute w-[1200px] h-auto -z-10 object-contain right-0 -top-[90px] lg:overflow-visible"
             />
           </div>
 
@@ -285,6 +286,7 @@ export default function Home() {
             transition: "opacity .5s ease-in-out",
           }}
         >
+          <BumerangWrapper/>
           {/* <Image
             src="/new-hero.webp"
             alt="lolol"
@@ -293,11 +295,11 @@ export default function Home() {
             className="absolute h-5/6 -top-20 -right-14 -z-10 object-cover lg:right-24 lg:top-0 lg:overflow-visible"
           /> */}
 
-          <h1 className="text-4xl font-bold italic text-left text-[#0d0d0d] relative top-24 left-8 drop-shadow-[0_2px_10px_rgba(255,255,255)] flex h-fit w-fit lg:left-96 lg:text-6xl">
+          <h1 className="text-4xl font-bold italic text-left text-[#0d0d0d] relative top-32 left-8 drop-shadow-[0_2px_10px_rgba(255,255,255)] flex h-fit w-fit lg:left-96 lg:text-6xl">
             HEDEFLERİNİZE <br />
             ULAŞMANIZ <br /> İÇİN
           </h1>
-          <h2 className="text-lg font-light italic text-left  text-[#0d0d0d] relative top-24 mt-16 left-8 flex h-fit w-fit lg:left-96 lg:text-xl">
+          <h2 className="text-lg font-light italic text-left  text-[#0d0d0d] relative top-32 mt-16 left-8 flex h-fit w-fit lg:left-96 lg:text-xl">
             Sizler için <br />
             yeniden tasarladığımız <br />
             öğrenim metodunu <br />
@@ -305,7 +307,7 @@ export default function Home() {
           </h2>
           <div
             key={"hero buttons"}
-            className="relative h-14 w-5/6 flex justify-between top-24 mt-16 left-8 items-center sm:justify-start space-x-2 lg:left-96"
+            className="relative h-14 w-5/6 flex justify-between top-32 mt-24 left-8 items-center sm:justify-start space-x-2 lg:left-96"
           >
             <a href="https://www.bmrng.app">
               <button className="text-xl px-8 py-4 font-bold italic text-center text-[#f7f6f1] bg-[#0d0d0d] rounded hover:bg-transparent border hover:border-[#0d0d0d] hover:text-[#0d0d0d] duration-100">
