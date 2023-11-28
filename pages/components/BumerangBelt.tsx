@@ -1,9 +1,12 @@
 import Image from 'next/image';
 import React, { useEffect } from 'react'
 
-type Props = {}
+interface BumerangBeltProps {
+    invert: boolean;
+    threshold: number;
+  }
 
-function BumerangBelt({invert, threshold}) {
+function BumerangBelt({ invert, threshold }: BumerangBeltProps) {
 
   // Dummy image URLs
   const imageUrls = [
@@ -29,12 +32,13 @@ function BumerangBelt({invert, threshold}) {
     // Apply rotation to the corresponding image
     const images = document.querySelectorAll('.rotate-animation');
     images.forEach((image, i) => {
+        const imageElement = image as HTMLImageElement;
         if (i <= index) {
-          image.style.transform = 'rotate(90deg)';
-          image.style.opacity = 1
+          imageElement.style.transform = 'rotate(90deg)';
+          imageElement.style.opacity = '1';
         } else {
-          image.style.transform = 'rotate(-90deg)';
-          image.style.opacity = .3
+          imageElement.style.transform = 'rotate(-90deg)';
+          imageElement.style.opacity = '0.3';
         }
       });
   };

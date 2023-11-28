@@ -1,9 +1,11 @@
 import Image from "next/image";
 import React from "react";
 
-type Props = {};
+interface BumerangWrapperProps {
+  invert: boolean;
+}
 
-const BumerangWrapper = ({invert}) => {
+const BumerangWrapper = ({ invert}: BumerangWrapperProps) => {
 
   return (
     <div className="w-full h-full absolute" style={{filter: invert ? "invert(1)" : "invert(0)"}}>
