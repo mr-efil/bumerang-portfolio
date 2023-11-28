@@ -222,7 +222,7 @@ export default function Home() {
             perspective: 3000,
           }}
         >
-          <div className="w-[2000px] h-screen absolute top-0 right-0">
+          <div className="w-[2000px] h-screen absolute top-0 right-0 xl:translate-x-[10%] 2xl:translate-x-0">
             <div className="w-[420px] h-96 absolute top-[240px] right-[135px] lg:top-[415px] lg:right-[640px] border-green-500 font-bold text-6xl text-[#0d0d0d] flex text-right justify-end overflow-hidden hero-100">
               <h1 className="flex h-fit items-end flex-col top-4 relative">
                 <span className="text-[150px] bg-[#f7f6f1] hero-soru-100 z-20">
@@ -250,11 +250,11 @@ export default function Home() {
             />
           </div>
 
-          <h1 className="text-4xl font-bold italic text-left text-[#0d0d0d] relative top-52 left-8 drop-shadow-[0_2px_10px_rgba(255,255,255)] h-fit w-fit lg:left-96 lg:text-6xl hidden lg:flex">
+          <h1 className="text-4xl font-bold italic text-left text-[#0d0d0d] relative top-52 left-24 drop-shadow-[0_2px_10px_rgba(255,255,255)] h-fit w-fit 2xl:left-96 lg:text-6xl hidden xl:flex">
             HEDEFLERİNİZE <br />
             ULAŞMANIZ <br /> İÇİN
           </h1>
-          <h2 className="text-lg font-light italic text-left  text-[#0d0d0d] relative top-52 mt-16 left-8 h-fit w-fit lg:left-96 lg:text-xl hidden lg:flex">
+          <h2 className="text-lg font-light italic text-left  text-[#0d0d0d] relative top-52 mt-16 left-24 h-fit w-fit 2xl:left-96 lg:text-xl hidden xl:flex">
             Sizler için <br />
             yeniden tasarladığımız <br />
             öğrenim metodunu <br />
@@ -262,7 +262,7 @@ export default function Home() {
           </h2>
           <div
             key={"hero buttons"}
-            className="relative h-14 w-5/6 justify-between top-52 mt-16 left-8 items-center sm:justify-start space-x-2 lg:left-96 hidden lg:flex"
+            className="relative h-14 w-5/6 justify-between top-52 mt-16 left-24 items-center sm:justify-start space-x-2 2xl:left-96 hidden xl:flex"
           >
             <a href="https://www.bmrng.app">
               <button className="text-xl px-8 py-4 font-bold italic text-center text-[#f7f6f1] bg-[#0d0d0d] rounded hover:bg-transparent border hover:border-[#0d0d0d] hover:text-[#0d0d0d] duration-100">
@@ -278,8 +278,8 @@ export default function Home() {
           </div>
         </section>
         <section
-          key={"hero"}
-          className="w-full h-[80vh] relative flex flex-col border-red-600 justify-start items-start overflow-visible visible lg:hidden"
+          key={"hero2"}
+          className="w-full h-[90vh] relative flex flex-col border-red-600 justify-start items-start overflow-visible visible xl:hidden"
           style={{
             opacity: chatShow ? 0 : 1,
             transition: "opacity .5s ease-in-out",
