@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 
 type Props = {}
 
-function BumerangBelt() {
+function BumerangBelt({invert, threshold}) {
 
   // Dummy image URLs
   const imageUrls = [
@@ -24,7 +24,7 @@ function BumerangBelt() {
     const scrollY = window.scrollY;
 
     // Calculate the index of the image to rotate based on scroll position
-    const index = Math.floor((scrollY - 250) / 60);
+    const index = Math.floor((scrollY - threshold) / 60);
 
     // Apply rotation to the corresponding image
     const images = document.querySelectorAll('.rotate-animation');
@@ -49,7 +49,7 @@ function BumerangBelt() {
 
 
   return (
-    <div className="w-full h-fit absolute flex flex-row -top-20 md:-top-0">{imageUrls.map((url, index) => (
+    <div className="w-full h-fit absolute flex flex-row -top-20 md:-top-0" style={{filter: invert ? "invert(1)" : "invert(0)"}}>{imageUrls.map((url, index) => (
         <div key={index} className={`rotate-animation duration-500`}>
           <Image src={url} width={100} height={100} alt={`Image ${index + 1}`}/>
         </div>

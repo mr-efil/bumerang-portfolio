@@ -282,13 +282,13 @@ export default function Home() {
         </section>
         <section
           key={"hero2"}
-          className="w-full h-[90vh] relative flex flex-col border-red-600 justify-start items-start overflow-visible visible xl:hidden"
+          className="w-full h-screen relative flex flex-col border-red-600 justify-start items-start overflow-visible visible xl:hidden"
           style={{
             opacity: chatShow ? 0 : 1,
             transition: "opacity .5s ease-in-out",
           }}
         >
-          <BumerangBelt/>
+          <BumerangBelt invert={false} threshold={250}/>
           <BumerangWrapper invert={false}/>
           {/* <Image
             src="/new-hero.webp"
