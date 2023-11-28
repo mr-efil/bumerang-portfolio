@@ -49,3 +49,73 @@ body {
   stroke-width: 0.5;
   transition: transform 0.2s ease-in-out;
 }
+
+.hero-soru{
+  animation: slide-in-soru 1.5s ease-out forwards;
+  transform: translateY(-300px);
+  animation-delay: 500ms;
+}
+
+@keyframes slide-in-soru {
+0% {
+		transform: translateY(-300px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
+}
+
+.hero-soru-100{
+  animation: slide-in-soru-100 1.5s ease-out forwards;
+  transform: translateY(-300px);
+}
+
+@keyframes slide-in-soru-100 {
+0% {
+		transform: translateY(-300px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
+}
+
+.hero-gun{
+  animation: slide-in-gun 1.5s ease-out forwards;
+  transform: translateY(300px);
+  animation-delay: 500ms;
+}
+
+@keyframes slide-in-gun {
+0% {
+		transform: translateY(300px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
+}
+
+.hero-gun-100{
+  animation: slide-in-gun-100 1.5s ease-out forwards;
+  transform: translateY(300px);
+}
+
+@keyframes slide-in-gun-100 {
+0% {
+		transform: translateY(300px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
+}
+
+@media (max-width: 1023px) {
+  .hero-100 {
+    transform: rotateZ(61deg) rotateX(40deg) rotateY(-22deg) skew(2deg) scale(0.66);
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-100 {
+    transform: rotateZ(61deg) rotateX(40deg) rotateY(-22deg) skew(2deg);
+  }
+}
