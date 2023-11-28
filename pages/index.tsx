@@ -217,7 +217,7 @@ export default function Home() {
         </header>
         <section
           key={"hero"}
-          className="w-screen h-[90vh] lg:h-[90vh] relative flex flex-col border-red-600 justify-start items-start overflow-visible"
+          className="w-screen h-screen relative flex flex-col border-red-600 justify-start items-start overflow-visible"
           style={{
             opacity: chatShow ? 0 : 1,
             transition: "opacity .5s ease-in-out",
