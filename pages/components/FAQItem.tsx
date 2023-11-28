@@ -60,7 +60,9 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer }) => {
               : " w-7 translate-x-4 transition-transform duration-500"
           }
         />
-      </div>
+      </div><h4 className="hidden">
+          {answer}
+        </h4>
       {isOpen && (
         <h4 className="relative flex mt-2 text-base lg:text-lg font-light italic">
           {answer}

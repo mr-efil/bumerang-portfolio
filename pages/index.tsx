@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import GeneralBox from "./components/GeneralBox";
 import SideOzellik from "./components/SideOzellik";
 import FAQItem from "./components/FAQItem";
+import Map from "./components/Map";
 
 export default function Home() {
   const [chatShow, setChatShow] = useState(false);
@@ -218,10 +219,88 @@ export default function Home() {
           style={{
             opacity: chatShow ? 0 : 1,
             transition: "opacity .5s ease-in-out",
+            perspective: 3000,
+          }}
+        >
+          {/* <div
+            className="w-[420px] h-96 absolute top-[260px] right-[495px] bg-red-500 opacity-50 font-bold text-6xl"
+            style={{
+              transform:
+                "rotateZ(61deg) rotateX(40deg) rotateY(-22deg) skew(2deg)",
+            }}
+          >
+            {" "}
+            <span className="text-8xl">100</span> <span>SORU</span>
+          </div> */}
+          <div
+            className="w-[420px] h-96 absolute top-[420px] right-[660px] border-green-500 font-bold text-6xl text-[#0d0d0d] flex text-right justify-end"
+            style={{
+              transform:
+                "rotateZ(61deg) rotateX(40deg) rotateY(-22deg) skew(2deg)",
+            }}
+          >
+            <h1 className="flex h-fit items-end flex-col">
+              <span className="text-[150px]">100</span>{" "}
+              <span className="opacity-60 top-2 relative">SORU</span>
+            </h1>
+          </div>
+          <div
+            className="w-[420px] h-96 absolute top-[-30px] right-[690px] border-green-500 font-bold text-6xl text-[#0d0d0d] flex items-end justify-end text-left"
+            style={{
+              transform:
+                "rotateZ(61deg) rotateX(40deg) rotateY(-22deg) skew(2deg)",
+            }}
+          >
+            <h1 className="-rotate-90 scale-y-[65%] -right-12 bottom-40 relative w-fit flex flex-col-reverse items-end">
+              <span className="text-[150px]">100</span>{" "}
+              <span className="opacity-60">GÜN</span>
+            </h1>
+          </div>
+          <Image
+            src="/new-hero.webp"
+            alt="lolol"
+            width={1200}
+            height={1200}
+            className="absolute h-5/6 -top-20 -right-14 -z-10 object-cover lg:right-0 lg:top-0 lg:overflow-visible"
+          />
+          
+          <h1 className="text-4xl font-bold italic text-left text-[#0d0d0d] relative top-52 left-8 drop-shadow-[0_2px_10px_rgba(255,255,255)] flex h-fit w-fit lg:left-96 lg:text-6xl">
+            HEDEFLERİNİZE <br />
+            ULAŞMANIZ <br /> İÇİN
+          </h1>
+          <h2 className="text-lg font-light italic text-left  text-[#0d0d0d] relative top-52 mt-16 left-8 flex h-fit w-fit lg:left-96 lg:text-xl">
+            Sizler için <br />
+            yeniden tasarladığımız <br />
+            öğrenim metodunu <br />
+            keşfedin.
+          </h2>
+          <div
+            key={"hero buttons"}
+            className="relative h-14 w-5/6 flex justify-between top-52 mt-16 left-8 items-center sm:justify-start space-x-2 lg:left-96"
+          >
+            <a href="https://www.bmrng.app">
+              <button className="text-xl px-8 py-4 font-bold italic text-center text-[#f7f6f1] bg-[#0d0d0d] rounded hover:bg-transparent border hover:border-[#0d0d0d] hover:text-[#0d0d0d] duration-100">
+                TEST ET
+              </button>
+            </a>
+            <button
+              className="text-xl px-6 py-4 font-light italic text-center text-[#0d0d0d] border border-black border-opacity-60 rounded opacity-60 hover:opacity-100 hover:bg-[#0d0d0d] hover:text-[#f7f6f1] duration-100"
+              onClick={() => scrollToElement("erken")}
+            >
+              erken kayıt
+            </button>
+          </div>
+        </section>
+        {/* <section
+          key={"hero"}
+          className="w-full h-[90vh] relative flex flex-col border-red-600 justify-start items-start overflow-visible"
+          style={{
+            opacity: chatShow ? 0 : 1,
+            transition: "opacity .5s ease-in-out",
           }}
         >
           <Image
-            src="/MOCK-5-25.webp"
+            src="/new-hero.webp"
             alt="lolol"
             width={1200}
             height={1200}
@@ -243,18 +322,18 @@ export default function Home() {
             className="relative h-14 w-5/6 flex justify-between top-52 mt-16 left-8 items-center sm:justify-start space-x-2 lg:left-96"
           >
             <a href="https://www.bmrng.app">
-              <button className="text-xl px-8 py-4 font-bold italic text-center text-[#f7f6f1] bg-[#0d0d0d] rounded">
+              <button className="text-xl px-8 py-4 font-bold italic text-center text-[#f7f6f1] bg-[#0d0d0d] rounded hover:bg-transparent border hover:border-[#0d0d0d] hover:text-[#0d0d0d] duration-100">
                 TEST ET
               </button>
             </a>
             <button
-              className="text-xl px-6 py-4 font-light italic text-center text-[#0d0d0d] border border-black border-opacity-60 rounded opacity-60"
+              className="text-xl px-6 py-4 font-light italic text-center text-[#0d0d0d] border border-black border-opacity-60 rounded opacity-60 hover:opacity-100 hover:bg-[#0d0d0d] hover:text-[#f7f6f1] duration-100"
               onClick={() => scrollToElement("erken")}
             >
               erken kayıt
             </button>
           </div>
-        </section>
+        </section> */}
         <section
           key={"boxes"}
           className="w-full h-screen relative flex flex-col items-center border-red-600 lg:flex-row lg:w-5/6 lg:space-x-3 lg:h-fit lg:my-8"
@@ -263,20 +342,20 @@ export default function Home() {
             transition: "opacity .5s ease-in-out",
           }}
         >
-          <GeneralBox text1={"8 FARKLI"} text2={"YARIŞMA"} number={1} />
-          <GeneralBox text1={"25 FARKLI"} text2={"OYUN"} number={2} />
-          <GeneralBox text1={"SINIRSIZ"} text2={"DENEME"} number={3} />
+          <GeneralBox text1={"DENEME"} text2={"ZİNCİRİ"} number={1} />
+          <GeneralBox text1={"EŞ-KOÇLUK"} text2={"SİSTEMİ"} number={2} />
+          <GeneralBox text1={"BİREYSEL"} text2={"TAKVİM"} number={3} />
 
           <div
-            className={`w-[90%] h-40 rounded-lg flex flex-col justify-between items-center border border-[#0d0d0d] relative my-2.5 `}
+            className={`w-[90%] h-40 rounded-lg flex flex-col justify-between items-center border border-[#0d0d0d] relative my-2.5 hover:bg-[#0d0d0d] group`}
           >
-            <span className="w-full text-base text-[#0d0d0d] font-light text-left top-4 left-5 relative">
+            <span className="w-full text-base text-[#0d0d0d] font-light text-left top-4 left-5 relative group-hover:text-[#f7f6f1] ">
               {"// 4"}
             </span>
-            <h2 className="w-full text-4xl text-[#0d0d0d] font-bold text-right bottom-4 right-5 relative">
-              MODERN
+            <h2 className="w-full text-4xl text-[#0d0d0d] font-bold text-right bottom-4 right-5 relative group-hover:text-[#f7f6f1]">
+              100 GÜN
               <br />
-              <span className="text-3xl font-light">ARAYÜZ</span>
+              <span className="text-3xl font-light">100 SORU</span>
             </h2>
           </div>
         </section>
@@ -294,16 +373,16 @@ export default function Home() {
               isVisible1 ? "opacity-30" : "opacity-0"
             }`}
           >
-            yarışmalar
+            denemeler
           </span>
           <h2
             className={`lg:text-right lg:right-96 lg:left-auto  lg:text-6xl text-4xl font-bold italic text-left text-[#0d0d0d] relative top-0 mt-2 left-8 drop-shadow-[0_2px_10px_rgba(255,255,255)] flex h-fit w-fit transition-opacity delay-300 ease-in duration-500 ${
               isVisible1 ? "opacity-100" : "opacity-0"
             }`}
           >
-            REKABETÇİ
+            DENEME
             <br />
-            YARIŞMALAR
+            ZİNCİRİ
           </h2>
           <h3
             className={`lg:text-right lg:right-96 lg:left-auto  lg:text-2xl text-lg font-light italic text-left top-0 mt-4 text-[#0d0d0d] relative left-8 flex h-fit w-fit transition-opacity ease-in duration-500 delay-500 ${
@@ -338,25 +417,25 @@ export default function Home() {
               isVisible2 ? "opacity-30" : "opacity-0"
             }`}
           >
-            oyunlar
+            koçluk
           </span>
           <h2
             className={`lg:left-96 lg:text-6xl text-4xl font-bold italic text-left text-[#0d0d0d] relative top-0 mt-2 left-8 drop-shadow-[0_2px_10px_rgba(255,255,255)] flex h-fit w-fit transition-opacity delay-300 ease-in duration-500 ${
               isVisible2 ? "opacity-100" : "opacity-0"
             }`}
           >
-            ZEKA
+            EŞ-KOÇLUK
             <br />
-            OYUNLARI
+            SİSTEMİ
           </h2>
           <h3
             className={`lg:left-96 lg:text-2xl text-lg font-light italic text-left top-0 mt-4 text-[#0d0d0d] relative left-8 flex h-fit w-fit transition-opacity ease-in duration-500 delay-500 ${
               isVisible2 ? "opacity-100" : "opacity-0"
             }`}
           >
-            Çeşitli eğlenceli oyunlarla <br />
-            çalışma sürenizi <br />
-            artırın.
+            Sınava sizinle aynı ilerlemeye <br />
+            sahip insanlarla <br />
+            hazırlanın.
           </h3>
           <div className="absolute w-auto h-3/4 bottom-0 -left-36 -z-10 lg:right-64 lg:left-auto">
             <Image
@@ -382,7 +461,7 @@ export default function Home() {
               isVisible3 ? "opacity-30" : "opacity-0"
             }`}
           >
-            denemeler
+            takvim
           </span>
           <h2
             className={`lg:text-right lg:right-96 lg:left-auto  lg:text-6xl text-4xl font-bold italic text-left text-[#0d0d0d] relative top-0 mt-2 left-8 drop-shadow-[0_2px_10px_rgba(255,255,255)] flex h-fit w-fit transition-opacity delay-300 ease-in duration-500 ${
@@ -391,16 +470,18 @@ export default function Home() {
           >
             BİREYSEL
             <br />
-            DENEMELER
+            TAKVİM
           </h2>
           <h3
             className={`lg:text-right lg:right-96 lg:left-auto  lg:text-2xl text-lg font-light italic text-left top-0 mt-4 text-[#0d0d0d] relative left-8 flex h-fit w-fit transition-opacity ease-in duration-500 delay-500 ${
               isVisible3 ? "opacity-100" : "opacity-0"
             }`}
           >
-            Hazır hissettiğiniz konulardan <br />
-            kendi seviyenize uygun <br />
-            denemeler oluşturun.
+            Her ihtiyacınızı görecek takvim
+            <br />
+            uygulamasıyla hayatınızı
+            <br />
+            düzenleyin.
           </h3>
           <div className="absolute w-auto h-3/4 bottom-0 -right-24 -z-10 lg:left-64 lg:right-auto">
             <Image
@@ -415,7 +496,7 @@ export default function Home() {
         <section
           ref={ref5}
           key={"horizontal"}
-          className="w-full h-fit relative flex flex-col items-stretch justify-start bg-[#0d0d0d] pb-24 mt-24 lg:pb-48"
+          className="w-full h-fit relative flex flex-col  items-stretch justify-start bg-[#0d0d0d] pb-24 mt-24 lg:pb-48"
           style={{
             opacity: chatShow ? 0 : 1,
             transition: "opacity .5s ease-in-out",
@@ -444,27 +525,29 @@ export default function Home() {
             <br />
             KEŞFEDİN
           </h2>
+          <div className="flex flex-col lg:flex-row lg:justify-evenly">
+            <SideOzellik
+              title={"TAKVİM"}
+              image={"/takvim.png"}
+              position={"right"}
+            >
+              “Hayatı <span className="font-bold">sıkışık </span>değil
+              <br /> <span className="font-bold">seri</span> yaşa”
+            </SideOzellik>
+            <SideOzellik title={"KÜRSÜ"} image={"/kursu.png"} position={"left"}>
+              “<span className="font-bold">Tabanı </span>taşı
+              <br /> <span className="font-bold">tavana</span> sınır koyma”
+            </SideOzellik>
 
-          <SideOzellik
-            title={"TAKVİM"}
-            image={"/takvim.png"}
-            position={"right"}
-          >
-            “Hayatı <span className="font-bold">sıkışık </span>değil
-            <br /> <span className="font-bold">seri</span> yaşa”
-          </SideOzellik>
-          <SideOzellik title={"KÜRSÜ"} image={"/kursu.png"} position={"left"}>
-            “<span className="font-bold">Tabanı </span>taşı
-            <br /> <span className="font-bold">tavana</span> sınır koyma”
-          </SideOzellik>
-          <SideOzellik
-            title={"PATİKA"}
-            image={"/patika.png"}
-            position={"right"}
-          >
-            “<span className="font-bold">Zekana </span>değil
-            <br /> <span className="font-bold">çabana</span> güven”
-          </SideOzellik>
+            <SideOzellik
+              title={"PATİKA"}
+              image={"/patika.png"}
+              position={"right"}
+            >
+              “<span className="font-bold">Zekana </span>değil
+              <br /> <span className="font-bold">çabana</span> güven”
+            </SideOzellik>
+          </div>
         </section>
         <section
           ref={ref6}
@@ -498,6 +581,19 @@ export default function Home() {
               <FAQItem key={index} {...faq} />
             ))}
           </div>
+        </section>
+
+        <section
+          ref={ref7}
+          id="erken"
+          key={"pricing"}
+          className="w-full h-fit relative flex items-center justify-center text-[#0d0d0d] bg-[#0d0d0d] overflow-hidden"
+          style={{
+            opacity: chatShow ? 0 : 1,
+            transition: "opacity .5s ease-in-out",
+          }}
+        >
+          <Map />
         </section>
 
         <section

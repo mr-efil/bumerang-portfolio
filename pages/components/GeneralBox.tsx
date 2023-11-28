@@ -31,20 +31,20 @@ const GeneralBox: React.FC<GeneralBoxProps> = ({ text1, text2, number }) => {
   return (
     <div
       ref={ref1}
-      className={`w-[90%] h-40 rounded-lg flex flex-col justify-between items-center relative my-2.5 border transition-colors delay-300 ${
-        isVisible1 ? "bg-[#0d0d0d] " : "bg-[#f7f6f1] "
+      className={`group w-[90%] h-40 rounded-lg flex flex-col justify-between items-center relative my-2.5 border transition-colors delay-300 ${
+        isVisible1 ? "bg-[#0d0d0d] hover:bg-[#f7f6f1] lg:delay-0 hover:border hover:border-[#0d0d0d]" : "bg-[#f7f6f1] "
       }`}
     >
       <span
         className={`w-full text-base font-light text-left top-4 left-5 relative transition-text delay-300 ${
-          isVisible1 ? "text-[#f7f6f1] " : "text-[#0d0d0d] "
+          isVisible1 ? "text-[#f7f6f1] group-hover:text-[#0d0d0d] lg:delay-0" : "text-[#0d0d0d] "
         }`}
       >
         {`// ${number}`}
       </span>
       <h2
         className={`w-full text-4xl font-bold text-right bottom-4 right-5 relative transition-text delay-300 ${
-          isVisible1 ? "text-[#f7f6f1] " : "text-[#0d0d0d] "
+          isVisible1 ? "text-[#f7f6f1] group-hover:text-[#0d0d0d] lg:delay-0" : "text-[#0d0d0d] "
         }`}
       >
         {text1}

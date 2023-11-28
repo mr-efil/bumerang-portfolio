@@ -4,7 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -35,4 +34,18 @@ body {
 }
 *::-webkit-scrollbar {
   display: none;
+}
+
+.land:hover {
+  fill-opacity: 1;
+  transform: translateY(-10px);
+}
+
+.land {
+  fill: #cccccc;
+  fill-opacity: 0.2;
+  stroke: white;
+  stroke-opacity: 1;
+  stroke-width: 0.5;
+  transition: transform 0.2s ease-in-out;
 }
