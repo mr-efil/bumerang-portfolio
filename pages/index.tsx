@@ -224,7 +224,6 @@ export default function Home() {
             perspective: 3000,
           }}
         >
-          
           <div className="w-[2000px] h-screen absolute -top-16 md:top-0 -right-[36rem] md:-right-64 lg:-right-16 xl:right-0 xl:translate-x-[10%] 2xl:translate-x-0 scale-[70%] md:scale-[80%] lg:scale-100">
             <div className="w-[420px] h-96 absolute top-[415px] right-[640px] border-green-500 font-bold text-6xl text-[#0d0d0d] flex text-right justify-end overflow-hidden hero-100">
               <h1 className="flex h-fit items-end flex-col top-4 relative">
@@ -288,8 +287,8 @@ export default function Home() {
             transition: "opacity .5s ease-in-out",
           }}
         >
-          <BumerangBelt invert={false} threshold={250}/>
-          <BumerangWrapper invert={false}/>
+          <BumerangBelt invert={false} threshold={250} />
+          <BumerangWrapper invert={false} />
           {/* <Image
             src="/new-hero.webp"
             alt="lolol"
@@ -493,7 +492,7 @@ export default function Home() {
             transition: "opacity .5s ease-in-out",
           }}
         >
-          <BumerangWrapper invert={true}/>
+          <BumerangWrapper invert={true} />
           {/* <span className="font-bold text-xl absolute top-6 left-6 rotate-45 lg:text-3xl lg:left-12 lg:top-12">
             +
           </span>
@@ -550,18 +549,7 @@ export default function Home() {
             transition: "opacity .5s ease-in-out",
           }}
         >
-          <span className="font-bold text-xl absolute top-6 left-6 rotate-45 lg:text-3xl lg:left-12 lg:top-12 opacity-60">
-            +
-          </span>
-          <span className="font-bold text-xl absolute top-6 right-6 rotate-45 lg:text-3xl lg:right-12 lg:top-12 opacity-60">
-            +
-          </span>
-          <span className="font-bold text-xl absolute bottom-6 left-6 rotate-45 lg:text-3xl lg:left-12 lg:bottom-12 opacity-60">
-            +
-          </span>
-          <span className="font-bold text-xl absolute bottom-6 right-6 rotate-45 lg:text-3xl lg:right-12 lg:bottom-12 opacity-60">
-            +
-          </span>
+          <BumerangWrapper invert={false} />
           <h2
             className={`lg:text-6xl text-4xl font-bold italic text-center relative top-0 mt-24 mx-auto flex h-fit w-fit transition-opacity delay-300 ease-in duration-500 mb-16 `}
           >
