@@ -6,6 +6,7 @@ import SideOzellik from "./components/SideOzellik";
 import FAQItem from "./components/FAQItem";
 import Map from "./components/Map";
 import BumerangWrapper from "./components/BumerangWrapper";
+import BumerangBelt from "./components/BumerangBelt";
 
 export default function Home() {
   const [chatShow, setChatShow] = useState(false);
@@ -223,6 +224,7 @@ export default function Home() {
             perspective: 3000,
           }}
         >
+          
           <div className="w-[2000px] h-screen absolute -top-16 md:top-0 -right-[36rem] md:-right-64 lg:-right-16 xl:right-0 xl:translate-x-[10%] 2xl:translate-x-0 scale-[70%] md:scale-[80%] lg:scale-100">
             <div className="w-[420px] h-96 absolute top-[415px] right-[640px] border-green-500 font-bold text-6xl text-[#0d0d0d] flex text-right justify-end overflow-hidden hero-100">
               <h1 className="flex h-fit items-end flex-col top-4 relative">
@@ -286,7 +288,8 @@ export default function Home() {
             transition: "opacity .5s ease-in-out",
           }}
         >
-          <BumerangWrapper/>
+          <BumerangBelt/>
+          <BumerangWrapper invert={false}/>
           {/* <Image
             src="/new-hero.webp"
             alt="lolol"
@@ -295,11 +298,11 @@ export default function Home() {
             className="absolute h-5/6 -top-20 -right-14 -z-10 object-cover lg:right-24 lg:top-0 lg:overflow-visible"
           /> */}
 
-          <h1 className="text-4xl font-bold italic text-left text-[#0d0d0d] relative top-32 left-8 drop-shadow-[0_2px_10px_rgba(255,255,255)] flex h-fit w-fit lg:left-96 lg:text-6xl">
+          <h1 className="text-4xl font-bold italic text-left text-[#0d0d0d] relative top-44 left-8 drop-shadow-[0_2px_10px_rgba(255,255,255)] flex h-fit w-fit lg:left-96 lg:text-6xl">
             HEDEFLERİNİZE <br />
             ULAŞMANIZ <br /> İÇİN
           </h1>
-          <h2 className="text-lg font-light italic text-left  text-[#0d0d0d] relative top-32 mt-16 left-8 flex h-fit w-fit lg:left-96 lg:text-xl">
+          <h2 className="text-lg font-light italic text-left  text-[#0d0d0d] relative top-44 mt-16 left-8 flex h-fit w-fit lg:left-96 lg:text-xl">
             Sizler için <br />
             yeniden tasarladığımız <br />
             öğrenim metodunu <br />
@@ -307,7 +310,7 @@ export default function Home() {
           </h2>
           <div
             key={"hero buttons"}
-            className="relative h-14 w-5/6 flex justify-between top-32 mt-24 left-8 items-center sm:justify-start space-x-2 lg:left-96"
+            className="relative h-14 w-5/6 flex justify-between top-44 mt-24 left-8 items-center sm:justify-start space-x-2 lg:left-96"
           >
             <a href="https://www.bmrng.app">
               <button className="text-xl px-8 py-4 font-bold italic text-center text-[#f7f6f1] bg-[#0d0d0d] rounded hover:bg-transparent border hover:border-[#0d0d0d] hover:text-[#0d0d0d] duration-100">
@@ -490,7 +493,8 @@ export default function Home() {
             transition: "opacity .5s ease-in-out",
           }}
         >
-          <span className="font-bold text-xl absolute top-6 left-6 rotate-45 lg:text-3xl lg:left-12 lg:top-12">
+          <BumerangWrapper invert={true}/>
+          {/* <span className="font-bold text-xl absolute top-6 left-6 rotate-45 lg:text-3xl lg:left-12 lg:top-12">
             +
           </span>
           <span className="font-bold text-xl absolute top-6 right-6 rotate-45 lg:text-3xl lg:right-12 lg:top-12">
@@ -501,7 +505,7 @@ export default function Home() {
           </span>
           <span className="font-bold text-xl absolute bottom-6 right-6 rotate-45 lg:text-3xl lg:right-12 lg:bottom-12">
             +
-          </span>
+          </span> */}
           <h2
             className={`lg:text-6xl text-2xl font-bold italic text-center text-[#f7f6f1] relative top-0 mt-24 mx-auto flex h-fit w-fit transition-opacity delay-300 ease-in duration-500 mb-16  ${
               isVisible5 ? "opacity-100" : "opacity-0"
