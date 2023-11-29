@@ -359,14 +359,14 @@ export default function Home() {
           }}
         >
           <span
-            className={`lg:text-right lg:right-96 lg:mt-48 lg:left-auto lg:text-xl text-base font-bold italic text-left  text-[#0d0d0d] relative top-0 mt-8 left-8 flex transition-opacity ease-in duration-500 delay-200 ${
+            className={`lg:text-right lg:right-24 xl:right-48 2xl:right-96 lg:mt-48 lg:left-auto text-base md:text-lg lg:text-xl font-bold italic text-left  text-[#0d0d0d] relative top-0 mt-8 left-8 flex transition-opacity ease-in duration-500 delay-200 ${
               isVisible1 ? "opacity-30" : "opacity-0"
             }`}
           >
             denemeler
           </span>
           <h2
-            className={`lg:text-right lg:right-96 lg:left-auto  lg:text-6xl text-4xl font-bold italic text-left text-[#0d0d0d] relative top-0 mt-2 left-8 drop-shadow-[0_2px_10px_rgba(255,255,255)] flex h-fit w-fit transition-opacity delay-300 ease-in duration-500 ${
+            className={`lg:text-right lg:right-24 xl:right-48 2xl:right-96 lg:left-auto text-4xl md:text-5xl lg:text-6xl font-bold italic text-left text-[#0d0d0d] relative top-0 mt-2 left-8 drop-shadow-[0_2px_10px_rgba(255,255,255)] flex h-fit w-fit transition-opacity delay-300 ease-in duration-500 ${
               isVisible1 ? "opacity-100" : "opacity-0"
             }`}
           >
@@ -375,7 +375,7 @@ export default function Home() {
             ZİNCİRİ
           </h2>
           <h3
-            className={`lg:text-right lg:right-96 lg:left-auto  lg:text-2xl text-lg font-light italic text-left top-0 mt-4 text-[#0d0d0d] relative left-8 flex h-fit w-fit transition-opacity ease-in duration-500 delay-500 ${
+            className={`lg:text-right lg:right-24 xl:right-48 2xl:right-96 lg:left-auto text-lg md:text-xl lg:text-2xl font-light italic text-left top-0 mt-4 text-[#0d0d0d] relative left-8 flex h-fit w-fit transition-opacity ease-in duration-500 delay-500 ${
               isVisible1 ? "opacity-100" : "opacity-0"
             }`}
           >
@@ -383,7 +383,7 @@ export default function Home() {
             mücadele etme fırsatı <br />
             edinin.
           </h3>
-          <div className="absolute w-auto h-3/4 bottom-0 -left-20 -z-10 lg:left-48">
+          <div className="absolute w-auto h-3/4 bottom-0 -left-20 -z-10 lg:-left-8 xl:-left-12 2xl:left-48">
             <Image
               src="/competition.webp"
               alt="lolol"
@@ -403,14 +403,14 @@ export default function Home() {
           }}
         >
           <span
-            className={`lg:left-96 lg:mt-48 lg:text-xl text-base font-bold italic text-left  text-[#0d0d0d] relative top-0 mt-8 left-8 flex transition-opacity ease-in duration-500 delay-200 ${
+            className={`lg:left-24 xl:left-48 2xl:left-96 lg:mt-48 lg:text-xl text-base font-bold italic text-left  text-[#0d0d0d] relative top-0 mt-8 left-8 flex transition-opacity ease-in duration-500 delay-200 ${
               isVisible2 ? "opacity-30" : "opacity-0"
             }`}
           >
             koçluk
           </span>
           <h2
-            className={`lg:left-96 lg:text-6xl text-4xl font-bold italic text-left text-[#0d0d0d] relative top-0 mt-2 left-8 drop-shadow-[0_2px_10px_rgba(255,255,255)] flex h-fit w-fit transition-opacity delay-300 ease-in duration-500 ${
+            className={`lg:left-24 xl:left-48 2xl:left-96 lg:text-6xl text-4xl font-bold italic text-left text-[#0d0d0d] relative top-0 mt-2 left-8 drop-shadow-[0_2px_10px_rgba(255,255,255)] flex h-fit w-fit transition-opacity delay-300 ease-in duration-500 ${
               isVisible2 ? "opacity-100" : "opacity-0"
             }`}
           >
@@ -419,7 +419,7 @@ export default function Home() {
             SİSTEMİ
           </h2>
           <h3
-            className={`lg:left-96 lg:text-2xl text-lg font-light italic text-left top-0 mt-4 text-[#0d0d0d] relative left-8 flex h-fit w-fit transition-opacity ease-in duration-500 delay-500 ${
+            className={`lg:left-24 xl:left-48 2xl:left-96 lg:text-2xl text-lg font-light italic text-left top-0 mt-4 text-[#0d0d0d] relative left-8 flex h-fit w-fit transition-opacity ease-in duration-500 delay-500 ${
               isVisible2 ? "opacity-100" : "opacity-0"
             }`}
           >
@@ -427,7 +427,7 @@ export default function Home() {
             sahip insanlarla <br />
             hazırlanın.
           </h3>
-          <div className="absolute w-auto h-3/4 bottom-0 -left-36 -z-10 lg:right-64 lg:left-auto">
+          <div className="absolute w-auto h-3/4 bottom-0 -left-36 -z-10 lg:-right-8 xl:right-12 2xl:right-64 lg:left-auto">
             <Image
               src="/game.webp"
               alt="lolol"
@@ -447,14 +447,14 @@ export default function Home() {
           }}
         >
           <span
-            className={`lg:text-right lg:right-96 lg:mt-48 lg:left-auto lg:text-xl text-base font-bold italic text-left  text-[#0d0d0d] relative top-0 mt-8 left-8 flex transition-opacity ease-in duration-500 delay-200 ${
+            className={`lg:text-right lg:right-24 xl:right-48 2xl:right-96 lg:mt-48 lg:left-auto lg:text-xl text-base font-bold italic text-left  text-[#0d0d0d] relative top-0 mt-8 left-8 flex transition-opacity ease-in duration-500 delay-200 ${
               isVisible3 ? "opacity-30" : "opacity-0"
             }`}
           >
             takvim
           </span>
           <h2
-            className={`lg:text-right lg:right-96 lg:left-auto  lg:text-6xl text-4xl font-bold italic text-left text-[#0d0d0d] relative top-0 mt-2 left-8 drop-shadow-[0_2px_10px_rgba(255,255,255)] flex h-fit w-fit transition-opacity delay-300 ease-in duration-500 ${
+            className={`lg:text-right lg:right-24 xl:right-48 2xl:right-96 lg:left-auto  lg:text-6xl text-4xl font-bold italic text-left text-[#0d0d0d] relative top-0 mt-2 left-8 drop-shadow-[0_2px_10px_rgba(255,255,255)] flex h-fit w-fit transition-opacity delay-300 ease-in duration-500 ${
               isVisible3 ? "opacity-100" : "opacity-0"
             }`}
           >
@@ -463,7 +463,7 @@ export default function Home() {
             TAKVİM
           </h2>
           <h3
-            className={`lg:text-right lg:right-96 lg:left-auto  lg:text-2xl text-lg font-light italic text-left top-0 mt-4 text-[#0d0d0d] relative left-8 flex h-fit w-fit transition-opacity ease-in duration-500 delay-500 ${
+            className={`lg:text-right lg:right-24 xl:right-48 2xl:right-96 lg:left-auto  lg:text-2xl text-lg font-light italic text-left top-0 mt-4 text-[#0d0d0d] relative left-8 flex h-fit w-fit transition-opacity ease-in duration-500 delay-500 ${
               isVisible3 ? "opacity-100" : "opacity-0"
             }`}
           >
@@ -473,7 +473,7 @@ export default function Home() {
             <br />
             düzenleyin.
           </h3>
-          <div className="absolute w-auto h-3/4 bottom-0 -right-24 -z-10 lg:left-64 lg:right-auto">
+          <div className="absolute w-auto h-3/4 bottom-0 -right-24 -z-10 lg:-left-12 xl:left-24 2xl:left-64 lg:right-auto">
             <Image
               src="/deneme.webp"
               alt="lolol"
