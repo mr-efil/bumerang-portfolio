@@ -281,7 +281,7 @@ export default function Home() {
         </section>
         <section
           key={"hero2"}
-          className="w-full h-screen relative flex flex-col border-red-600 justify-center items-start overflow-visible visible xl:hidden"
+          className="w-full h-screen md:h-fit lg:h-screen md:py-48 lg:py-0 relative flex flex-col border-red-600 justify-center items-start overflow-visible visible xl:hidden"
           style={{
             opacity: chatShow ? 0 : 1,
             transition: "opacity .5s ease-in-out",
