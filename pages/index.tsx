@@ -281,13 +281,13 @@ export default function Home() {
         </section>
         <section
           key={"hero2"}
-          className="w-full h-screen relative flex flex-col border-red-600 justify-start items-start overflow-visible visible xl:hidden"
+          className="w-full h-screen relative flex flex-col border-red-600 justify-center items-start overflow-visible visible xl:hidden"
           style={{
             opacity: chatShow ? 0 : 1,
             transition: "opacity .5s ease-in-out",
           }}
         >
-          <BumerangBelt invert={false}  id={1} drc={"right"}/>
+          <BumerangBelt invert={false} id={1} drc={"right"} />
           {/* <BumerangWrapper invert={false} /> */}
           {/* <Image
             src="/new-hero.webp"
@@ -296,32 +296,33 @@ export default function Home() {
             height={1200}
             className="absolute h-5/6 -top-20 -right-14 -z-10 object-cover lg:right-24 lg:top-0 lg:overflow-visible"
           /> */}
-
-          <h1 className="text-4xl font-bold italic text-left text-[#0d0d0d] relative top-44 left-8 drop-shadow-[0_2px_10px_rgba(255,255,255)] flex h-fit w-fit lg:left-96 lg:text-6xl">
-            HEDEFLERİNİZE <br />
-            ULAŞMANIZ <br /> İÇİN
-          </h1>
-          <h2 className="text-lg font-light italic text-left  text-[#0d0d0d] relative top-44 mt-16 left-8 flex h-fit w-fit lg:left-96 lg:text-xl">
-            Sizler için <br />
-            yeniden tasarladığımız <br />
-            öğrenim metodunu <br />
-            keşfedin.
-          </h2>
-          <div
-            key={"hero buttons"}
-            className="relative h-14 w-5/6 flex justify-between top-44 mt-24 left-8 items-center sm:justify-start space-x-2 lg:left-96"
-          >
-            <a href="https://www.bmrng.app">
-              <button className="text-xl px-8 py-4 font-bold italic text-center text-[#f7f6f1] bg-[#0d0d0d] rounded hover:bg-transparent border hover:border-[#0d0d0d] hover:text-[#0d0d0d] duration-100">
-                TEST ET
-              </button>
-            </a>
-            <button
-              className="text-xl px-6 py-4 font-light italic text-center text-[#0d0d0d] border border-black border-opacity-60 rounded opacity-60 hover:opacity-100 hover:bg-[#0d0d0d] hover:text-[#f7f6f1] duration-100"
-              onClick={() => scrollToElement("erken")}
+          <div className="flex flex-col justify-start w-full h-fit relative left-8 md:left-24 lg:left-96 ">
+            <h1 className="text-4xl md:text-6xl lg:text-6xl font-bold italic text-left text-[#0d0d0d] relative drop-shadow-[0_2px_10px_rgba(255,255,255)] flex h-fit w-fit ">
+              HEDEFLERİNİZE <br />
+              ULAŞMANIZ <br /> İÇİN
+            </h1>
+            <h2 className="text-lg md:text-2xl lg:text-xl font-light italic text-left  text-[#0d0d0d] relative mt-16 flex h-fit w-fit">
+              Sizler için <br />
+              yeniden tasarladığımız <br />
+              öğrenim metodunu <br />
+              keşfedin.
+            </h2>
+            <div
+              key={"hero buttons"}
+              className="relative h-14 w-5/6 flex justify-between mt-24 items-center sm:justify-start space-x-2"
             >
-              erken kayıt
-            </button>
+              <a href="https://www.bmrng.app">
+                <button className="text-xl px-8 py-4 font-bold italic text-center text-[#f7f6f1] bg-[#0d0d0d] rounded hover:bg-transparent border hover:border-[#0d0d0d] hover:text-[#0d0d0d] duration-100">
+                  TEST ET
+                </button>
+              </a>
+              <button
+                className="text-xl px-6 py-4 font-light italic text-center text-[#0d0d0d] border border-black border-opacity-60 rounded opacity-60 hover:opacity-100 hover:bg-[#0d0d0d] hover:text-[#f7f6f1] duration-100"
+                onClick={() => scrollToElement("erken")}
+              >
+                erken kayıt
+              </button>
+            </div>
           </div>
         </section>
         <section
@@ -359,23 +360,23 @@ export default function Home() {
           }}
         >
           <span
-            className={`lg:text-right lg:right-24 xl:right-48 2xl:right-96 lg:mt-48 lg:left-auto text-base md:text-lg lg:text-xl font-bold italic text-left  text-[#0d0d0d] relative top-0 mt-8 left-8 flex transition-opacity ease-in duration-500 delay-200 ${
+            className={`lg:text-right lg:right-24 xl:right-48 2xl:right-96 lg:mt-48 lg:left-auto text-base md:text-xl lg:text-xl font-bold italic text-left  text-[#0d0d0d] relative top-0 mt-8 left-8 md:left-16 flex transition-opacity ease-in duration-500 delay-200 ${
               isVisible1 ? "opacity-30" : "opacity-0"
             }`}
           >
             denemeler
           </span>
           <h2
-            className={`lg:text-right lg:right-24 xl:right-48 2xl:right-96 lg:left-auto text-4xl md:text-5xl lg:text-6xl font-bold italic text-left text-[#0d0d0d] relative top-0 mt-2 left-8 drop-shadow-[0_2px_10px_rgba(255,255,255)] flex h-fit w-fit transition-opacity delay-300 ease-in duration-500 ${
+            className={`lg:text-right lg:right-24 xl:right-48 2xl:right-96 lg:left-auto text-4xl md:text-6xl lg:text-6xl font-bold italic text-left text-[#0d0d0d] relative top-0 mt-2 left-8 md:left-16 drop-shadow-[0_2px_10px_rgba(255,255,255)] flex h-fit w-fit transition-opacity delay-300 ease-in duration-500 ${
               isVisible1 ? "opacity-100" : "opacity-0"
             }`}
           >
             DENEME
             <br />
             ZİNCİRİ
-          </h2>
+          </h2> 
           <h3
-            className={`lg:text-right lg:right-24 xl:right-48 2xl:right-96 lg:left-auto text-lg md:text-xl lg:text-2xl font-light italic text-left top-0 mt-4 text-[#0d0d0d] relative left-8 flex h-fit w-fit transition-opacity ease-in duration-500 delay-500 ${
+            className={`lg:text-right lg:right-24 xl:right-48 2xl:right-96 lg:left-auto text-lg md:text-2xl lg:text-2xl font-light italic text-left top-0 mt-4 text-[#0d0d0d] relative left-8 md:left-16 flex h-fit w-fit transition-opacity ease-in duration-500 delay-500 ${
               isVisible1 ? "opacity-100" : "opacity-0"
             }`}
           >
@@ -403,14 +404,14 @@ export default function Home() {
           }}
         >
           <span
-            className={`lg:left-24 xl:left-48 2xl:left-96 lg:mt-48  text-base md:text-lg lg:text-xl font-bold italic text-left  text-[#0d0d0d] relative top-0 mt-8 left-8 flex transition-opacity ease-in duration-500 delay-200 ${
+            className={`lg:left-24 xl:left-48 2xl:left-96 lg:mt-48  text-base md:text-xl lg:text-xl font-bold italic text-left  text-[#0d0d0d] relative top-0 mt-8 left-8 md:left-16 flex transition-opacity ease-in duration-500 delay-200 ${
               isVisible2 ? "opacity-30" : "opacity-0"
             }`}
           >
             koçluk
           </span>
           <h2
-            className={`lg:left-24 xl:left-48 2xl:left-96 text-4xl md:text-5xl lg:text-6xl font-bold italic text-left text-[#0d0d0d] relative top-0 mt-2 left-8 drop-shadow-[0_2px_10px_rgba(255,255,255)] flex h-fit w-fit transition-opacity delay-300 ease-in duration-500 ${
+            className={`lg:left-24 xl:left-48 2xl:left-96 text-4xl md:text-6xl lg:text-6xl font-bold italic text-left text-[#0d0d0d] relative top-0 mt-2 left-8 md:left-16 drop-shadow-[0_2px_10px_rgba(255,255,255)] flex h-fit w-fit transition-opacity delay-300 ease-in duration-500 ${
               isVisible2 ? "opacity-100" : "opacity-0"
             }`}
           >
@@ -419,7 +420,7 @@ export default function Home() {
             SİSTEMİ
           </h2>
           <h3
-            className={`lg:left-24 xl:left-48 2xl:left-96 text-lg md:text-xl lg:text-2xl font-light italic text-left top-0 mt-4 text-[#0d0d0d] relative left-8 flex h-fit w-fit transition-opacity ease-in duration-500 delay-500 ${
+            className={`lg:left-24 xl:left-48 2xl:left-96 text-lg md:text-2xl lg:text-2xl font-light italic text-left top-0 mt-4 text-[#0d0d0d] relative left-8 md:left-16 flex h-fit w-fit transition-opacity ease-in duration-500 delay-500 ${
               isVisible2 ? "opacity-100" : "opacity-0"
             }`}
           >
@@ -447,14 +448,14 @@ export default function Home() {
           }}
         >
           <span
-            className={`lg:text-right lg:right-24 xl:right-48 2xl:right-96 lg:mt-48 lg:left-auto lg:text-xl text-base font-bold italic text-left  text-[#0d0d0d] relative top-0 mt-8 left-8 flex transition-opacity ease-in duration-500 delay-200 ${
+            className={`lg:text-right lg:right-24 xl:right-48 2xl:right-96 lg:mt-48 lg:left-auto md:text-xl lg:text-xl text-base font-bold italic text-left  text-[#0d0d0d] relative top-0 mt-8 left-8 md:left-16 flex transition-opacity ease-in duration-500 delay-200 ${
               isVisible3 ? "opacity-30" : "opacity-0"
             }`}
           >
             takvim
           </span>
           <h2
-            className={`lg:text-right lg:right-24 xl:right-48 2xl:right-96 lg:left-auto text-4xl md:text-5xl lg:text-6xl font-bold italic text-left text-[#0d0d0d] relative top-0 mt-2 left-8 drop-shadow-[0_2px_10px_rgba(255,255,255)] flex h-fit w-fit transition-opacity delay-300 ease-in duration-500 ${
+            className={`lg:text-right lg:right-24 xl:right-48 2xl:right-96 lg:left-auto text-4xl md:text-6xl lg:text-6xl font-bold italic text-left text-[#0d0d0d] relative top-0 mt-2 left-8 md:left-16 drop-shadow-[0_2px_10px_rgba(255,255,255)] flex h-fit w-fit transition-opacity delay-300 ease-in duration-500 ${
               isVisible3 ? "opacity-100" : "opacity-0"
             }`}
           >
@@ -463,7 +464,7 @@ export default function Home() {
             TAKVİM
           </h2>
           <h3
-            className={`lg:text-right lg:right-24 xl:right-48 2xl:right-96 lg:left-auto text-lg md:text-xl lg:text-2xl font-light italic text-left top-0 mt-4 text-[#0d0d0d] relative left-8 flex h-fit w-fit transition-opacity ease-in duration-500 delay-500 ${
+            className={`lg:text-right lg:right-24 xl:right-48 2xl:right-96 lg:left-auto text-lg md:text-2xl lg:text-2xl font-light italic text-left top-0 mt-4 text-[#0d0d0d] relative left-8 md:left-16 flex h-fit w-fit transition-opacity ease-in duration-500 delay-500 ${
               isVisible3 ? "opacity-100" : "opacity-0"
             }`}
           >
@@ -586,7 +587,7 @@ export default function Home() {
             transition: "opacity .5s ease-in-out",
           }}
         >
-          <BumerangBelt invert={true} id={2} drc={"left"}/>
+          <BumerangBelt invert={true} id={2} drc={"left"} />
           <div className="w-full lg:w-1/3 h-fit flex flex-col justify-start items-center">
             <div className="w-full lg:w-5/6 relative h-fit flex">
               <h3 className="text-base px-16 py-4 left-8 lg:left-0 flex relative font-light italic text-center text-[#0d0d0d] border border-black rounded-lg">
