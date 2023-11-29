@@ -287,8 +287,8 @@ export default function Home() {
             transition: "opacity .5s ease-in-out",
           }}
         >
-          <BumerangBelt invert={false} threshold={250} />
-          <BumerangWrapper invert={false} />
+          <BumerangBelt invert={false}  id={1} drc={"right"}/>
+          {/* <BumerangWrapper invert={false} /> */}
           {/* <Image
             src="/new-hero.webp"
             alt="lolol"
@@ -586,6 +586,7 @@ export default function Home() {
             transition: "opacity .5s ease-in-out",
           }}
         >
+          <BumerangBelt invert={true} id={2} drc={"left"}/>
           <div className="w-full lg:w-1/3 h-fit flex flex-col justify-start items-center">
             <div className="w-full lg:w-5/6 relative h-fit flex">
               <h3 className="text-base px-16 py-4 left-8 lg:left-0 flex relative font-light italic text-center text-[#0d0d0d] border border-black rounded-lg">
