@@ -217,14 +217,14 @@ export default function Home() {
         </header>
         <section
           key={"hero"}
-          className="w-screen h-screen relative flex flex-col border-red-600 justify-start items-start overflow-visible"
+          className="w-screen h-[900px] relative flex flex-col border-red-600 justify-start items-start overflow-visible"
           style={{
             opacity: chatShow ? 0 : 1,
             transition: "opacity .5s ease-in-out",
             perspective: 3000,
           }}
         >
-          <div className="w-[2000px] h-screen absolute -top-16 md:top-0 -right-[36rem] md:-right-64 lg:-right-16 xl:right-0 xl:translate-x-[10%] 2xl:translate-x-0 scale-[70%] md:scale-[80%] lg:scale-100">
+          <div className="w-[2000px] h-screen absolute -top-16 md:top-0 -right-[36rem] sm:-right-80 md:-right-60 lg:-right-16 xl:right-0 xl:translate-x-[10%] 2xl:translate-x-0 scale-[70%] sm:scale-[75%] md:scale-[80%] lg:scale-100">
             <div className="w-[420px] h-96 absolute top-[415px] right-[640px] border-green-500 font-bold text-6xl text-[#0d0d0d] flex text-right justify-end overflow-hidden hero-100">
               <h1 className="flex h-fit items-end flex-col top-4 relative">
                 <span className="text-[150px] bg-[#f7f6f1] hero-soru-100 z-20">
@@ -326,7 +326,7 @@ export default function Home() {
         </section>
         <section
           key={"boxes"}
-          className="w-full h-screen relative flex flex-col items-center border-red-600 lg:flex-row lg:w-5/6 lg:space-x-3 lg:h-fit lg:my-8"
+          className="w-full h-fit py-20 relative flex flex-wrap justify-center items-center border-red-600 lg:flex-row xl:w-5/6 2xl:w-[90%] lg:h-fit lg:my-8"
           style={{
             opacity: chatShow ? 0 : 1,
             transition: "opacity .5s ease-in-out",
@@ -337,7 +337,7 @@ export default function Home() {
           <GeneralBox text1={"BİREYSEL"} text2={"TAKVİM"} number={3} />
 
           <div
-            className={`w-[90%] h-40 rounded-lg flex flex-col justify-between items-center border border-[#0d0d0d] relative my-2.5 hover:bg-[#0d0d0d] group`}
+            className={`w-[90%] max-w-lg md:max-w-xl lg:max-w-md 2xl:max-w-sm h-40 rounded-lg flex flex-col justify-between items-center border border-[#0d0d0d] relative my-2.5 mx-2 hover:bg-[#0d0d0d] group`}
           >
             <span className="w-full text-base text-[#0d0d0d] font-light text-left top-4 left-5 relative group-hover:text-[#f7f6f1] ">
               {"// 4"}
@@ -403,14 +403,14 @@ export default function Home() {
           }}
         >
           <span
-            className={`lg:left-24 xl:left-48 2xl:left-96 lg:mt-48 lg:text-xl text-base font-bold italic text-left  text-[#0d0d0d] relative top-0 mt-8 left-8 flex transition-opacity ease-in duration-500 delay-200 ${
+            className={`lg:left-24 xl:left-48 2xl:left-96 lg:mt-48  text-base md:text-lg lg:text-xl font-bold italic text-left  text-[#0d0d0d] relative top-0 mt-8 left-8 flex transition-opacity ease-in duration-500 delay-200 ${
               isVisible2 ? "opacity-30" : "opacity-0"
             }`}
           >
             koçluk
           </span>
           <h2
-            className={`lg:left-24 xl:left-48 2xl:left-96 lg:text-6xl text-4xl font-bold italic text-left text-[#0d0d0d] relative top-0 mt-2 left-8 drop-shadow-[0_2px_10px_rgba(255,255,255)] flex h-fit w-fit transition-opacity delay-300 ease-in duration-500 ${
+            className={`lg:left-24 xl:left-48 2xl:left-96 text-4xl md:text-5xl lg:text-6xl font-bold italic text-left text-[#0d0d0d] relative top-0 mt-2 left-8 drop-shadow-[0_2px_10px_rgba(255,255,255)] flex h-fit w-fit transition-opacity delay-300 ease-in duration-500 ${
               isVisible2 ? "opacity-100" : "opacity-0"
             }`}
           >
@@ -419,7 +419,7 @@ export default function Home() {
             SİSTEMİ
           </h2>
           <h3
-            className={`lg:left-24 xl:left-48 2xl:left-96 lg:text-2xl text-lg font-light italic text-left top-0 mt-4 text-[#0d0d0d] relative left-8 flex h-fit w-fit transition-opacity ease-in duration-500 delay-500 ${
+            className={`lg:left-24 xl:left-48 2xl:left-96 text-lg md:text-xl lg:text-2xl font-light italic text-left top-0 mt-4 text-[#0d0d0d] relative left-8 flex h-fit w-fit transition-opacity ease-in duration-500 delay-500 ${
               isVisible2 ? "opacity-100" : "opacity-0"
             }`}
           >
@@ -454,7 +454,7 @@ export default function Home() {
             takvim
           </span>
           <h2
-            className={`lg:text-right lg:right-24 xl:right-48 2xl:right-96 lg:left-auto  lg:text-6xl text-4xl font-bold italic text-left text-[#0d0d0d] relative top-0 mt-2 left-8 drop-shadow-[0_2px_10px_rgba(255,255,255)] flex h-fit w-fit transition-opacity delay-300 ease-in duration-500 ${
+            className={`lg:text-right lg:right-24 xl:right-48 2xl:right-96 lg:left-auto text-4xl md:text-5xl lg:text-6xl font-bold italic text-left text-[#0d0d0d] relative top-0 mt-2 left-8 drop-shadow-[0_2px_10px_rgba(255,255,255)] flex h-fit w-fit transition-opacity delay-300 ease-in duration-500 ${
               isVisible3 ? "opacity-100" : "opacity-0"
             }`}
           >
@@ -463,7 +463,7 @@ export default function Home() {
             TAKVİM
           </h2>
           <h3
-            className={`lg:text-right lg:right-24 xl:right-48 2xl:right-96 lg:left-auto  lg:text-2xl text-lg font-light italic text-left top-0 mt-4 text-[#0d0d0d] relative left-8 flex h-fit w-fit transition-opacity ease-in duration-500 delay-500 ${
+            className={`lg:text-right lg:right-24 xl:right-48 2xl:right-96 lg:left-auto text-lg md:text-xl lg:text-2xl font-light italic text-left top-0 mt-4 text-[#0d0d0d] relative left-8 flex h-fit w-fit transition-opacity ease-in duration-500 delay-500 ${
               isVisible3 ? "opacity-100" : "opacity-0"
             }`}
           >
