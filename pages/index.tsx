@@ -386,7 +386,7 @@ export default function Home() {
           </h3>
           <div className="absolute w-auto h-3/4 bottom-0 -left-20 -z-10 lg:-left-8 xl:-left-12 2xl:left-48">
             <Image
-              src="/competition.webp"
+              src="/TABLET_SAG.webp"
               alt="lolol"
               width={3000}
               height={1800}
@@ -476,7 +476,7 @@ export default function Home() {
           </h3>
           <div className="absolute w-auto h-3/4 bottom-0 -right-24 -z-10 lg:-left-12 xl:left-24 2xl:left-64 lg:right-auto">
             <Image
-              src="/deneme.webp"
+              src="/LAPTOP_SAG.webp"
               alt="lolol"
               width={3000}
               height={1800}
